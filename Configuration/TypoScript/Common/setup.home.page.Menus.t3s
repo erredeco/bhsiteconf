@@ -1,0 +1,77 @@
+# -------------------------------------------------------------
+#   This file includes the definition of the more complex menu objects
+# -------------------------------------------------------------
+
+
+lib.mainmenu = HMENU
+lib.mainmenu {
+  1 = TMENU
+  1 {
+    expAll=1
+    NO{
+      ATagParams.dataWrap = title="{field:title}"
+      stdWrap.htmlSpecialChars=1
+      wrapItemAndSub = <li>|</li><li class="divider hide-for-small"></li>   
+    }  
+    ACT = 1
+    ACT.wrapItemAndSub = <li class="active">|</li><li class="divider hide-for-small"></li>  
+    CUR = 1
+    CUR < .ACT
+    IFSUB = 1
+    IFSUB.wrapItemAndSub = <li class="has-dropdown">|</li><li class="divider hide-for-small"></li>   
+    ACTIFSUB = 1
+    ACTIFSUB.wrapItemAndSub  = <li class="has-dropdown active">|</li><li class="divider hide-for-small"></li>    
+    CURIFSUB = 1
+    CURIFSUB < .ACTIFSUB 
+  }
+  2 < .1
+  2 {
+    NO.wrapItemAndSub = <li>|</li>
+    ACT.wrapItemAndSub = <li class="active">|</li>
+    CUR.wrapItemAndSub = <li class="active">|</li>
+    IFSUB.wrapItemAndSub = <li class="has-dropdown">|</li>  
+    ACTIFSUB.wrapItemAndSub  = <li class="has-dropdown active">|</li>
+    CURIFSUB.wrapItemAndSub  = <li class="has-dropdown active">|</li>
+  }
+  2.wrap = <ul class="dropdown">|</ul>
+  3 < .2
+  3 {
+    IFSUB.wrapItemAndSub = <li>|</li>  
+    ACTIFSUB.wrapItemAndSub  = <li class="active">|</li>
+    CURIFSUB.wrapItemAndSub  = <li class="active">|</li>
+  }
+
+  wrap=<ul>|</ul>
+}
+
+
+
+
+    # -------------------------------------------------------------
+    #  SubMenu navigation menu (2+3)
+    # -------------------------------------------------------------
+
+lib.submenu = HMENU
+lib.submenu{
+	entryLevel = 1	
+	1=TMENU
+	1.NO=1
+}
+
+
+
+
+
+
+
+
+## ---------------------------------------------------------
+# object that controls if the  SubMenu is present
+## ---------------------------------------------------------
+
+	  #test if lib.submenu is rendered
+lib.testSubmenu=TEXT
+lib.testSubmenu.value = 1
+lib.testSubmenu.if.isTrue.cObject < lib.submenu	
+
+

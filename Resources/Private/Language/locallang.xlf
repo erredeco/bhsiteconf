@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="it" datatype="plaintext" original="messages"
+	date="2012-10-17T17:55:17Z" product-name="bhsiteconf">
+		<header/>
+		<body>
+			<trans-unit id="flux.fluidfluxpage.sheets.settings.basics" xml:space="preserve">
+				<source>Basic Configuration</source>
+			</trans-unit>
+			<trans-unit id="flux.fluidfluxpage.fields.settings.includenavigation" xml:space="preserve">
+				<source>Include navigation?</source>
+			</trans-unit>   
+
+			<trans-unit id="flux.fluidfluxpage.fields.settings.includebanner" xml:space="preserve">
+				<source>Include banner area?</source>
+			</trans-unit> 
+
+			<trans-unit id="flux.fluidfluxpage.columns.settings.column0" xml:space="preserve">
+				<source>Content Area Main Column</source>
+			</trans-unit>  
+			<trans-unit id="flux.fluidfluxpage.columns.settings.column1" xml:space="preserve">
+				<source>Content Area Side Column</source>
+			</trans-unit> 
+			<trans-unit id="flux.fluidfluxpage.columns.settings.column2" xml:space="preserve">
+				<source>Content Area Bottom Column</source>
+			</trans-unit>  
+
+
+			<trans-unit id="flux.calltoaction" xml:space="preserve">
+				<source>Call to Action button</source>
+			</trans-unit>
+			<trans-unit id="flux.calltoaction.description" xml:space="preserve">
+				<source>Call to Action button with optional introduction text, button formatting and parameters for the target page</source>
+			</trans-unit>
+			<trans-unit id="flux.calltoaction.fields.text" xml:space="preserve">
+				<source>Button Text</source>
+			</trans-unit>
+			<trans-unit id="flux.calltoaction.fields.target" xml:space="preserve">
+				<source>Button Link</source>
+			</trans-unit>
+			<trans-unit id="flux.calltoaction.fields.intro" xml:space="preserve">
+				<source>Introduction Text</source>
+			</trans-unit>
+			<trans-unit id="flux.calltoaction.fields.size" xml:space="preserve">
+				<source>Button Size</source>
+			</trans-unit>
+			<trans-unit id="flux.calltoaction.fields.expand" xml:space="preserve">
+				<source>Expand Button to 100%</source>
+			</trans-unit>
+			<trans-unit id="flux.calltoaction.fields.additionalsubject" xml:space="preserve">
+				<source>Additional Subject</source>
+			</trans-unit>
+
+			<trans-unit id="flux.accordion" xml:space="preserve">
+				<source>Foundation: Accordion with content elements</source>
+			</trans-unit>
+			<trans-unit id="flux.accordion.description" xml:space="preserve">
+				<source>Accordion element container</source>
+			</trans-unit>
+
+			<trans-unit id="flux.accordion.sheets.panels" xml:space="preserve">
+				<source>Panels</source>
+			</trans-unit>
+			<trans-unit id="flux.accordion.sections.panels" xml:space="preserve">
+				<source>Configure Panels</source>
+			</trans-unit>
+			<trans-unit id="flux.accordion.objects.panel" xml:space="preserve">
+				<source>Panel</source>
+			</trans-unit>
+			<trans-unit id="flux.accordion.objects.panel.title" xml:space="preserve">
+				<source>Panel header/title</source>
+			</trans-unit>
+			<trans-unit id="flux.accordion.objects.panel.active" xml:space="preserve">
+				<source>Panel is active?</source>
+			</trans-unit>
+			<trans-unit id="flux.accordion.sheets.other" xml:space="preserve">
+				<source>Other configuration</source>
+			</trans-unit>
+			<trans-unit id="flux.accordion.fields.accordionname" xml:space="preserve">
+				<source>(Optional) Name for the accordion</source>
+			</trans-unit>
+
+			<trans-unit id="flux.tabs" xml:space="preserve">
+				<source>Foundation: Tabs with content elements</source>
+			</trans-unit>
+			<trans-unit id="flux.tabs.description" xml:space="preserve">
+				<source>Tabs element container</source>
+			</trans-unit>
+			<trans-unit id="flux.tabs.sheets.display" xml:space="preserve">
+				<source>Display</source>
+			</trans-unit>
+			<trans-unit id="flux.tabs.fields.vertical" xml:space="preserve">
+				<source>Display vertical tabs</source>
+			</trans-unit>
+			<trans-unit id="flux.tabs.sheets.tabs" xml:space="preserve">
+				<source>Tabs</source>
+			</trans-unit>
+			<trans-unit id="flux.tabs.sections.tabs" xml:space="preserve">
+				<source>Configure Tabs</source>
+			</trans-unit>
+			<trans-unit id="flux.tabs.objects.tab" xml:space="preserve">
+				<source>Tab</source>
+			</trans-unit>
+			<trans-unit id="flux.tabs.objects.tab.title" xml:space="preserve">
+				<source>Tab title</source>
+			</trans-unit>
+			<trans-unit id="flux.tabs.objects.tab.active" xml:space="preserve">
+				<source>Active?</source>
+			</trans-unit>
+			<trans-unit id="flux.tabs.sheets.other" xml:space="preserve">
+				<source>Other configuration</source>
+			</trans-unit>
+			<trans-unit id="flux.tabs.fields.deeplinking" xml:space="preserve">
+				<source>(Optional) Activate Deep Linking</source>
+			</trans-unit>
+
+			<trans-unit id="flux.orbit" xml:space="preserve">
+				<source>Foundation: Orbit (Element Carousel)</source>
+			</trans-unit>
+			<trans-unit id="flux.orbit.description" xml:space="preserve">
+				<source>Content elements, images or simple texts (each type supporting captions) in a carousel matrix with JS based slide change.</source>
+			</trans-unit>
+
+			<trans-unit id="flux.orbit.columns.column" xml:space="preserve">
+				<source>Content elements</source>
+			</trans-unit>
+
+			<trans-unit id="flux.orbit.fields.settings.orbit.animation" xml:space="preserve">
+				<source>Set animation type</source>
+			</trans-unit>
+			<trans-unit id="flux.orbit.fields.settings.orbit.disablebullets" xml:space="preserve">
+				<source>Disable bullets</source>
+			</trans-unit>
+			<trans-unit id="flux.orbit.fields.settings.orbit.disablecircular" xml:space="preserve">
+				<source>Disable circular sliding</source>
+			</trans-unit>
+			<trans-unit id="flux.orbit.fields.settings.orbit.disabletimer" xml:space="preserve">
+				<source>Disable timer (disables autostart)</source>
+			</trans-unit>		
+			<trans-unit id="flux.orbit.fields.settings.orbit.disablepauseonhover" xml:space="preserve">
+				<source>Disable the pause on the current slide while hovering</source>
+			</trans-unit>	
+			<trans-unit id="flux.orbit.fields.settings.orbit.resumeonmouseout" xml:space="preserve">
+				<source>If pause on hover is set to true, this setting resumes playback after mousing out of slide</source>
+			</trans-unit>				
+			<trans-unit id="flux.orbit.fields.settings.orbit.disablenextonclick" xml:space="preserve">
+				<source>Disable advance to next slide on click</source>
+			</trans-unit>	
+			<trans-unit id="flux.orbit.fields.settings.orbit.timerspeed" xml:space="preserve">
+				<source>Sets the amount of time in milliseconds before transitioning a slide (if empty: default: 10000)</source>
+			</trans-unit>
+			<trans-unit id="flux.orbit.fields.settings.orbit.animationspeed" xml:space="preserve">
+				<source>Sets the amount of time in milliseconds the transition between slides will last (if empty: default: 500)</source>
+			</trans-unit>
+			<trans-unit id="flux.orbit.fields.settings.orbit.disablenavigationarrows" xml:space="preserve">
+				<source>Disable navigation arrows</source>
+			</trans-unit>	
+			<trans-unit id="flux.orbit.fields.settings.orbit.disableslidenumbers" xml:space="preserve">
+				<source>Disable slide numbers</source>
+			</trans-unit>
+			<trans-unit id="flux.orbit.fields.settings.orbit.disabletimerprogressbar" xml:space="preserve">
+				<source>Disable timer progress bar</source>
+			</trans-unit>				
+			<trans-unit id="flux.orbit.fields.settings.orbit.variableheight" xml:space="preserve">
+				<source>Enable variable height</source>
+			</trans-unit>	
+			<trans-unit id="flux.orbit.fields.settings.orbit.disableswipe" xml:space="preserve">
+				<source>Disable swipe</source>
+			</trans-unit>	
+			<trans-unit id="flux.orbit.fields.settings.orbit.additionalclass" xml:space="preserve">
+				<source>Additional class for Orbit slider container</source>
+			</trans-unit>	
+
+
+
+			<trans-unit id="flux.orbit.sheets.elements" xml:space="preserve">
+				<source>Content elements</source>
+			</trans-unit>
+			<trans-unit id="flux.orbit.sections.elements" xml:space="preserve">
+				<source>Manage Content elements</source>
+			</trans-unit>
+			<trans-unit id="flux.orbit.objects.text" xml:space="preserve">
+				<source>Text</source>
+			</trans-unit>
+			<trans-unit id="flux.orbit.objects.text.title" xml:space="preserve">
+				<source>Header</source>
+			</trans-unit>
+			<trans-unit id="flux.orbit.objects.text.size" xml:space="preserve">
+				<source>Text size</source>
+			</trans-unit>
+			<trans-unit id="flux.orbit.objects.text.text" xml:space="preserve">
+				<source>Text</source>
+			</trans-unit>
+			<trans-unit id="flux.orbit.objects.content" xml:space="preserve">
+				<source>Content elements</source>
+			</trans-unit>
+			<trans-unit id="flux.orbit.objects.content.id" xml:space="preserve">
+				<source>Content area ID (override not necessary but possible)</source>
+			</trans-unit>
+			<trans-unit id="flux.orbit.objects.image" xml:space="preserve">
+				<source>Image</source>
+			</trans-unit>
+			<trans-unit id="flux.orbit.objects.image.file" xml:space="preserve">
+				<source>Image file</source>
+			</trans-unit>
+
+			<trans-unit id="flux.orbit.objects.image.alttext" xml:space="preserve">
+				<source>Alternative Text for Image</source>
+			</trans-unit>
+
+
+
+
+
+
+ 
+			<trans-unit id="page.label.allsitetitle" xml:space="preserve">
+				<source>&lt;h1&gt;B Human S.r.L. &lt;/h1&gt; &lt;h2&gt; Profitable Innovation &lt;/h2&gt;</source>
+			</trans-unit> 
+			<trans-unit id="page.label.linktotop" xml:space="preserve">
+				<source>Torna Su</source>
+			</trans-unit>  
+			<trans-unit id="page.label.footer.bhcopyright" xml:space="preserve">
+				<source>B Human S.r.L. Tutti i diritti riservati.</source>
+			</trans-unit>
+			<trans-unit id="page.label.jumpmenu.title" xml:space="preserve">
+				<source>Scelte rapide</source>
+			</trans-unit>      
+
+
+
+			<trans-unit id="page.label.backtohome.title" xml:space="preserve">
+				<source>Torna alla home page</source>
+			</trans-unit>
+			<trans-unit id="page.label.print" xml:space="preserve">
+				<source>Stampa pagina</source>
+			</trans-unit>      
+			<trans-unit id="page.label.header.title" xml:space="preserve">
+				<source>Header</source>
+			</trans-unit>
+			<trans-unit id="page.label.mainmenu.title" xml:space="preserve">
+				<source>Navigazione principale</source>
+			</trans-unit>
+			<trans-unit id="page.label.content.title" xml:space="preserve">
+				<source>Contenuto principale</source>
+			</trans-unit>
+			<trans-unit id="page.label.extra.title" xml:space="preserve">
+				<source>Contenuto extra</source>
+			</trans-unit>
+			<trans-unit id="page.label.submenu.title" xml:space="preserve">
+				<source>Navigazione locale</source>
+			</trans-unit>
+			<trans-unit id="page.label.footer.title" xml:space="preserve">
+				<source>Footer</source>
+			</trans-unit>       
+			<trans-unit id="page.label.lib.breadcrumbs.title" xml:space="preserve">
+				<source>Voi siete qui</source>
+			</trans-unit>
+			<trans-unit id="page.label.languagemenu.title" xml:space="preserve">
+				<source>Seleziona la tua lingua</source>
+			</trans-unit>
+			<trans-unit id="page.label.headmenu.title" xml:space="preserve">
+				<source>Utilità</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,28 @@
+# -------------------------------------------------------------
+# Remove extra TYPO3 markup
+# http://www.busynoggin.com/blog/blog-item/archive/2007/february/article/getting-rid-of-extra-markup-in-typo3/
+# -------------------------------------------------------------
+
+# Remove the attribute <p class="bodytext"
+lib.parseFunc_RTE.nonTypoTagStdWrap.encapsLines.addAttributes.P.class >
+
+# Remove empty <p> after <hr> (?)
+lib.parseFunc_RTE.externalBlocks.hr.stripNL = 1
+
+### removes <p> around <hr> & <table> (replicato in css_styled_content.txt(?);forse puoi tirar via)
+### lib.parseFunc_RTE.externalBlocks = ol,ul,table,address, div, hr, blockquote
+
+### add content type to external div of CSC
+tt_content.stdWrap.innerWrap.cObject.default.20.15 = COA
+tt_content.stdWrap.innerWrap.cObject.default.20.15{
+	10=TEXT
+	10.data = field:CType
+	10.noTrimWrap = | | |
+
+	20=TEXT
+	20.data = field:list_type 
+	20.noTrimWrap = | | | 	
+}
+
+### wraps the text on simple text element Ctype
+tt_content.text.20.wrap = <div class="csc-text-bodytext">|</div>

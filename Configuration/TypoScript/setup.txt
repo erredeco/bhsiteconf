@@ -1,0 +1,25 @@
+#Include external files:
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bhsiteconf/Configuration/TypoScript/Common/setup.home.baseConfig.t3s">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bhsiteconf/Configuration/TypoScript/Common/setup.home.cleanMarkup.t3s">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bhsiteconf/Configuration/TypoScript/Common/setup.home.page.commonElements.t3s">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bhsiteconf/Configuration/TypoScript/Common/setup.home.page.Menus.t3s">
+
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bhsiteconf/Configuration/TypoScript/Common/setup.home.ext.news.t3s">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bhsiteconf/Configuration/TypoScript/Common/setup.home.ext.powermail.t3s">
+
+
+
+plugin.tx_bhsiteconf.view {
+	templateRootPath = {$plugin.tx_bhsiteconf.view.templateRootPath}
+	partialRootPath = {$plugin.tx_bhsiteconf.view.partialRootPath}
+	layoutRootPath = {$plugin.tx_bhsiteconf.view.layoutRootPath}
+}
+
+plugin.tx_bhsiteconf.settings{
+	page{
+		footer.includePagesInMenu = {$plugin.tx_bhsiteconf.settings.page.footer.includePagesInMenu}
+		header.includePagesInMenu = {$plugin.tx_bhsiteconf.settings.page.header.includePagesInMenu}
+	}
+}

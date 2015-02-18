@@ -1,0 +1,98 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en"
+	xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+	xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+	<f:section name="SharedResources">
+		<v:page.header.meta name="viewport" content="width=device-width,initial-scale=1"/>
+		<v:page.header.meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+		<v:asset.style path="{f:uri.resource(path:'Assets/Css/normalize.css')}" external="0"  name="normalize"  namedChunks="1" />
+		<v:asset.style path="{f:uri.resource(path:'Assets/Css/app.css')}" external="0"  name="principal"  namedChunks="1" />
+		<v:asset.script path="{f:uri.resource(path:'Assets/Js/vendor/modernizr.custom.2.8.3.js')}" allowMoveToFooter="0" name="modernizr"  namedChunks="1" />
+		<v:asset.script path="{f:uri.resource(path:'Assets/Js/foundation/foundation.min.js')}" name="foundation"  namedChunks="1" />
+		<v:asset.script path="{f:uri.resource(path:'Assets/Js/app.js')}" name="app"  namedChunks="1" />
+	</f:section>
+
+	<f:section name="AllSiteTitle">
+		<div class="visuallyhidden" id="allsitetitle">
+			<f:translate key="page.label.allsitetitle" htmlEscape="0" />
+		</div>
+		<hr class="invisible">
+	</f:section>
+
+	<f:section name="JumpMenu">
+		<strong class="visuallyhidden" id="jumpmenulabel"><f:translate key="page.label.jumpmenu.title" /></strong>
+		<div class="invisible4">
+			<ol id="jumpmenu">
+				<li>
+					<f:link.page addQueryString="1" section="header" tabindex="1" rel="nofollow" title="{f:translate(key:'page.label.header.title')}">
+						<f:translate key="page.label.header.title" />	
+					</f:link.page> 
+				</li>
+				<li>
+					<f:link.page addQueryString="1" section="mainmenu" tabindex="1" rel="nofollow" title="{f:translate(key:'page.label.mainmenu.title')}">
+						<f:translate key="page.label.mainmenu.title" />	
+					</f:link.page> 
+				</li>
+				<li>
+					<f:link.page addQueryString="1" section="content" tabindex="1" rel="nofollow" title="{f:translate(key:'page.label.content.title')}">
+						<f:translate key="page.label.content.title" />	
+					</f:link.page>
+					<f:cObject typoscriptObjectPath="lib.mainSectionIndex" />  
+				</li>
+				<v:content.render column="1" as="sideContentElements">
+					<f:if condition="{sideContentElements}">
+						<li>                		
+							<f:link.page addQueryString="1" section="extra" tabindex="1" rel="nofollow" title="{f:translate(key:'page.label.extra.title')}">
+								<f:translate key="page.label.extra.title" />	
+							</f:link.page>				
+						</li>	
+					</f:if>
+				</v:content.render>
+				<f:if condition="{settings.includenavigation}">
+					<v:condition.page.hasSubpages>
+						<li>               	
+							<f:link.page addQueryString="1" section="submenu" tabindex="1" rel="nofollow" title="{f:translate(key:'page.label.submenu.title')}">
+								<f:translate key="page.label.submenu.title" />	
+							</f:link.page>
+						</li>					
+					</v:condition.page.hasSubpages>
+				</f:if>	
+				<li>		
+					<f:link.page addQueryString="1" section="footer" tabindex="1" rel="nofollow" title="{f:translate(key:'page.label.footer.title')}">
+						<f:translate key="page.label.footer.title" />	
+					</f:link.page>
+				</li>	 
+			</ol>
+		</div>
+	</f:section>
+
+	<f:section name="PageTitle">
+	<div class="row">
+		<div class="small-12 medium-12 large-12 columns">
+			<h1 id="pagetitle"><em>
+				<f:if condition="{v:page.info(field:'subtitle')}">
+				    <f:then>{v:page.info(field:'subtitle')}</f:then>
+				    <f:else>{v:page.info(field:'title')}</f:else>
+				</f:if>
+			</em></h1>
+		</div>
+	</div>
+	</f:section>
+
+	<f:section name="LinkToTop">
+		<p class="visuallyhidden">
+		<f:link.page addQueryString="1" section="jumpmenu">
+			<f:translate key="page.label.linktotop" />
+		</f:link.page>
+    
+    <!-- 
+      NOTA: potresti aggiungere il parametro argumentsToBeExcludedFromQueryString="{1:'id'}"
+      NOTA: vedi di cambiare e mettere semplicemente <a href="#jumpmenu">...</a>
+     -->
+    
+		</p>
+	</f:section>
+
+</div>
+

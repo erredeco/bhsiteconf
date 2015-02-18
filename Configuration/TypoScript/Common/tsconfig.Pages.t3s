@@ -1,0 +1,32 @@
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bhsiteconf/Configuration/Typoscript/Common/rte/tsconfig.rte.base.t3s">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bhsiteconf/Configuration/Typoscript/Common/rte/tsconfig.rte.interface.t3s">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bhsiteconf/Configuration/Typoscript/Common/rte/tsconfig.rte.styles.t3s">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bhsiteconf/Configuration/Typoscript/Common/rte/tsconfig.rte.proc.t3s">
+
+
+mod.web_list {
+	#hide not necessary tables
+	hideTables = static_countries, static_country_zones, static_currencies, static_languages, static_territories
+
+}
+
+TCEFORM.tt_content.header_layout {
+    # Remove h1, h5 and rename the remaining
+    removeItems = 0,1,5
+    altLabels.2 = LLL:EXT:bhsiteconf/Resources/Private/Language/locallang_db.xlf:ttcontent.headerlayout.default
+    altLabels.3 = LLL:EXT:bhsiteconf/Resources/Private/Language/locallang_db.xlf:ttcontent.headerlayout.3
+    altLabels.4 = LLL:EXT:bhsiteconf/Resources/Private/Language/locallang_db.xlf:ttcontent.headerlayout.4
+}
+
+/* 
+uncomment when you will be sure about the group IDs
+TCEMAIN.permissions {
+	#owner be_groups UID for new pages
+	groupid = 2
+    group = 31    
+}
+*/
+
+
+#TCEFORM.tx_powermail_domain_model_fields.validation.addItems.6 = ciao
+

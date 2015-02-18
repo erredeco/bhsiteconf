@@ -1,0 +1,74 @@
+# -------------------------------------------------------------
+#   This file includes elements which are in commons between
+#	all the pages.
+# -------------------------------------------------------------
+
+## ---------------------------------------------------------
+# define page object and <body> properties:
+## ---------------------------------------------------------
+
+# remove the <body> initial tag!
+
+config.disableBodyTag = 1
+
+/*
+page=PAGE
+page.bodyTagCObject = TEXT
+page.bodyTagCObject.noTrimWrap = | | |
+*/
+#object that writes page level
+lib.pageLevel=TEXT
+lib.pageLevel{
+      value= level-{level:-1}      
+      insertData = 1    
+    }
+
+## ---------------------------------------------------------
+# Section index menu for content in colPos=0
+## ---------------------------------------------------------
+
+
+ lib.mainSectionIndex=HMENU
+ lib.mainSectionIndex{
+    #questo serve per fare il menu con la sezione della pagina ATTUALE
+    entryLevel=-1
+    1=TMENU
+    1{
+      wrap=<ol>|</ol>
+      noBlur=1
+      sectionIndex=1
+      sectionIndex.type = header
+      NO{        
+       linkWrap=<li>|</li>
+			 ATagParams = tabindex="1" rel="nofollow"
+			 stdWrap.htmlSpecialChars = 1			        
+       }        
+    }
+   #controllo se esiste almeno un elemento
+        
+   if.numRows{
+     table=tt_content
+     select{
+         pidInList=this
+         where=colPos=0
+      } 
+    }
+  }
+  
+
+## ---------------------------------------------------------
+# banner image (with FAL support):
+## ---------------------------------------------------------
+
+lib.imageBanner = FILES
+lib.imageBanner { 
+     references.data =  levelmedia:-1, slide
+     references.listNum = 0
+     renderObj = IMAGE
+     renderObj{
+      file.import.data = file:current:publicUrl
+      titleText.data = file:current:title    
+      altText.data = file:current:alternative    
+     }
+     #renderObj.wrap = <div>|</div>
+}

@@ -1,0 +1,121 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<f:layout name="Content" />
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
+     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
+     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+
+<f:section name="Configuration">
+	<flux:form id="orbit" options="{group:'Foundation Elements', icon:'{f:uri.resource(path: \'Icons/Content/bhsiteconf_carousel.png\')}'}">
+		<flux: field.select name="settings.orbit.animation" items="slide,fade"/>
+		<flux:field.checkbox name="settings.orbit.disablebullets"/>
+		<flux:field.checkbox name="settings.orbit.disablecircular"/>
+		<flux:field.checkbox name="settings.orbit.disabletimer"/>
+		<flux:field.checkbox name="settings.orbit.disablepauseonhover"/>
+		<flux:field.checkbox name="settings.orbit.resumeonmouseout"/>
+		<flux:field.checkbox name="settings.orbit.disablenextonclick"/>
+		<flux:field.input name="settings.orbit.timerspeed"  eval="int,trim" />
+		<flux:field.input name="settings.orbit.animationspeed"  eval="int,trim" />	
+		<flux:field.checkbox name="settings.orbit.disablenavigationarrows"/>
+		<flux:field.checkbox name="settings.orbit.disableslidenumbers"/>
+		<flux:field.checkbox name="settings.orbit.disabletimerprogressbar"/>
+		<flux:field.checkbox name="settings.orbit.variableheight"/>
+		<flux:field.checkbox name="settings.orbit.disableswipe"/>		
+		<flux:field.input name="settings.orbit.additionalclass" default="example-orbit-content"/>
+		<flux:grid>
+			<f:for each="{elements}" as="element" iteration="iteration">
+				<f:for each="{element}" key="elementType" as="elementData">
+					<f:if condition="{0: elementType} == {0: 'content'}">
+						<flux:grid.row>
+							<flux:grid.column>
+								<flux:form.content name="{elementData.id}" label="Content: {elementData.id}" />
+							</flux:grid.column>
+						</flux:grid.row>
+					</f:if>
+				</f:for>
+			</f:for>
+		</flux:grid>
+		<flux:form.sheet name="elements">
+			<flux:form.section name="elements">
+				<flux:form.object name="text">
+					<flux:field.input name="title" />
+					<flux:field.select name="size" items="h1,h2,h3,h4,h5,h6" />
+					<flux:field.text name="text" enableRichText="TRUE" />
+					<f:render section="SharedObjectFields" arguments="{_all}" />
+				</flux:form.object>
+				<flux:form.object name="content">
+					<flux:field.input name="id" default="{v:random.string(length: 6)}" />
+					<f:render section="SharedObjectFields" arguments="{_all}" />
+				</flux:form.object>
+				<flux:form.object name="image">
+					<flux:field.file name="file" />
+					<flux:field.input name="alttext" />
+					<f:render section="SharedObjectFields" arguments="{_all}" />
+				</flux:form.object>
+			</flux:form.section>
+		</flux:form.sheet>
+	</flux:form>
+</f:section>
+
+<f:section name="Preview">
+	<p>Elements: {elements -> f:count()}</p>
+	<flux:widget.grid />
+</f:section>
+
+<f:section name="SharedObjectFields">
+	<flux:field.input name="caption" label="Optional caption text" />
+	<flux:field.checkbox name="active" label="Active?"/>
+</f:section>
+
+<f:section name="Main">
+	<ul id="orbit-{record.uid}" class="{settings.orbit.additionalclass}" data-orbit="data-orbit" data-options="{f:if(condition: settings.orbit.timerspeed, then: 'timer_speed:{settings.orbit.timerspeed};')}	
+				      {f:if(condition: settings.orbit.disablepauseonhover, then: 'pause_on_hover:false;')}
+				      {f:if(condition: settings.orbit.resumeonmouseout, then: 'resume_on_mouseout:true;')}
+				      {f:if(condition: settings.orbit.disablenextonclick, then: 'next_on_click:false;')}
+				      {f:if(condition: settings.orbit.animationspeed, then: 'animation_speed:{settings.orbit.animationspeed};')}
+				      {f:if(condition: settings.orbit.disablenavigationarrows, then: 'navigation_arrows:false;')}	
+				      {f:if(condition: settings.orbit.disableslidenumbers, then: 'slide_number:false;')}	
+				      {f:if(condition: settings.orbit.disabletimerprogressbar, then: 'timer_show_progress_bar:false;')}		
+				      {f:if(condition: settings.orbit.disablebullets, then: 'bullets:false;')}
+				      {f:if(condition: settings.orbit.disablecircular, then: 'circular:false;')}
+				      {f:if(condition: settings.orbit.disabletimer, then: 'timer:false;')}	
+				      {f:if(condition: settings.orbit.variableheight, then: 'variable_height:true;')}					      
+							{f:if(condition: settings.orbit.disableswipe, then: 'swipe:false;')}	
+				      animation:{settings.orbit.animation}">
+
+			<f:for each="{elements}" as="element" iteration="iteration">
+				<li class="item{f:if(condition: elementData.active, then: 'active')}" data-orbit-slide="orbitcontent-{record.uid}-{iteration.index}">
+					<f:for each="{element}" key="elementType" as="elementData">
+							<f:render section="{elementType -> v:format.case(case: 'ucfirst')}" arguments="{_all}" />
+							<f:if condition="{0: elementData.caption} != {0: ''}">
+								<div class="orbit-caption">
+										{elementData.caption -> f:format.html()}
+								</div>
+							</f:if>
+					</f:for>
+				</li>
+			</f:for>
+	</ul>
+</f:section>
+
+<f:section name="Image">
+	<f:image src="{elementData.file}" alt="{elementData.alttext}"  />
+</f:section>
+
+<f:section name="Content">
+	<div class="container">
+		<flux:content.render area="{elementData.id}" />
+	</div>
+</f:section>
+
+<f:section name="Text">
+	<div>
+		<f:if condition="{elementData.title}">
+			<{elementData.size}>{elementData.title -> f:format.htmlentities()}</{elementData.size}>
+		</f:if>
+		{elementData.text -> f:format.html()}
+	</div>
+</f:section>
+
+</div>

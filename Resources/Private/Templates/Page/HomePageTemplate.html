@@ -1,0 +1,42 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<f:layout name="Home" />
+<f:section name="Configuration">
+	<flux:form id="fluidfluxpage" label="Home Page Template" options="{icon:'{f:uri.resource(path: \'Icons/Page.gif\')}'}">
+	<flux:form.sheet name="settings.basics">   
+		<flux:grid>
+			<flux:grid.row>
+				<flux:grid.column colspan="2" colPos="0" name="settings.column0" />
+			</flux:grid.row>
+			<flux:grid.row>
+				<flux:grid.column colPos="1" name="settings.column1" />
+				<flux:grid.column colPos="2" name="settings.column2" />
+			</flux:grid.row>
+		</flux:grid>
+	</flux:form.sheet>
+	</flux:form>
+</f:section>
+
+<f:section name="Vars"> 
+</f:section>
+
+<f:section name="Resources">
+	<f:render partial="CommonPageObjects" section="SharedResources" />
+</f:section>
+
+<f:section name="Main">
+<div class="row">
+	<div class="medium-12 large-12 columns"><v:content.render column="0" /></div>
+</div>
+<div class="row">
+  <div class="medium-7 large-7 columns"><v:content.render column="1" /></div>
+  <div class="medium-5 large-5 columns"><v:content.render column="2" /></div>
+</div>
+
+
+
+<f:render section="LinkToTop" partial="CommonPageObjects" />
+</f:section>
+
+
+

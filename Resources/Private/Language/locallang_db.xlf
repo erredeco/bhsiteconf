@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-04-27T21:00:00Z" product-name="tx_bhsiteconf">
+		<header/>
+		<body>
+			<trans-unit id="constant.cat.general" xml:space="preserve">
+				<source>General</source>
+			</trans-unit>
+			<trans-unit id="constant.cat.resources" xml:space="preserve">
+				<source>Resources</source>
+			</trans-unit>
+			<trans-unit id="constant.cat.language" xml:space="preserve">
+				<source>Language</source>
+			</trans-unit>
+			<trans-unit id="constant.cat.extension" xml:space="preserve">
+				<source>Extensions setup</source>
+			</trans-unit>
+
+			<trans-unit id="constant.extensionSetup.realurlEnable" xml:space="preserve">
+				<source>Enable or disable RealUrl</source>
+			</trans-unit>
+			<trans-unit id="constant.extensionSetup.realurlPath" xml:space="preserve">
+				<source>Base URL for realurl:insert RealUrl path  with "/" at the end, e.g. "http://yoursite.com/" (see TSREF)</source>
+			</trans-unit>
+			<trans-unit id="constant.settings.page.footer.includePagesInMenu" xml:space="preserve">
+				<source>IDs of pages in footer menu</source>
+			</trans-unit>
+
+			<trans-unit id="constant.settings.page.header.includePagesInMenu" xml:space="preserve">
+				<source>IDs of pages in header menu</source>
+			</trans-unit>
+
+
+			<trans-unit id="constant.settings.headerText" xml:space="preserve">
+				<source>Comment in Header</source>
+			</trans-unit>			
+			<trans-unit id="constant.file.templateRootPath" xml:space="preserve">
+				<source>Path to templates for this site (FE)</source>
+			</trans-unit>
+			<trans-unit id="constant.file.layoutRootPath" xml:space="preserve">
+				<source>Path to layouts for this site (FE)</source>
+			</trans-unit>
+			<trans-unit id="constant.file.partialsRootPath" xml:space="preserve">
+				<source>Path to partials for this site (FE)</source>
+			</trans-unit>
+			<trans-unit id="constant.file.overlaysRootPath" xml:space="preserve">
+				<source>Path to root folder for overlays</source>
+			</trans-unit>
+
+			<trans-unit id="constant.resource.cssPath" xml:space="preserve">
+				<source>Path to css resources (FE)</source>
+			</trans-unit>
+			<trans-unit id="constant.resource.jsPath" xml:space="preserve">
+				<source>Path to js resources (FE)</source>
+			</trans-unit>
+			<trans-unit id="constant.language.languageUid" xml:space="preserve">
+				<source>Id of the main language</source>
+			</trans-unit>
+			<trans-unit id="constant.language.languageName" xml:space="preserve">
+				<source>Name of the main language</source>
+			</trans-unit>
+			<trans-unit id="constant.language.languageKey" xml:space="preserve">
+				<source>Int.key of the main language</source>
+			</trans-unit>
+			<trans-unit id="constant.language.languageLocale" xml:space="preserve">
+				<source>Locale of the main language</source>
+			</trans-unit>
+
+
+
+			<trans-unit id="ttcontent.headerlayout.default" xml:space="preserve">
+				<source>Default Heading type (Heading H2)</source>
+			</trans-unit>
+			<trans-unit id="ttcontent.headerlayout.3" xml:space="preserve">
+				<source>Heading type (Heading H3)</source>
+			</trans-unit>	
+			<trans-unit id="ttcontent.headerlayout.4" xml:space="preserve">
+				<source>Heading type (Heading H4)</source>
+			</trans-unit>
+
+
+
+
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,49 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<f:layout name="Content" />
+
+<f:section name="Configuration">
+	<flux:form id="fluidfluxcontent" label="Fluid/FluxContent di prova" options="{group:'FCE', icon:'{f:uri.resource(path: \'Icons/Page.gif\')}'}">
+
+		<flux:field.input name="target" label="'Select link'">
+			<flux:wizard.link activeTab="'page'" />
+		</flux:field.input>
+	
+
+		
+	<flux:field.input name="title" />
+
+
+
+	<flux:field.checkbox name="yeah" label="temp yeah"/>
+		<!-- Insert fields, sheets, grid, form section objects etc. here, in this flux:flexform tag -->
+	</flux:form>
+</f:section>
+
+<f:section name="Preview">
+	<!-- uncomment this to use a grid for nested content elements -->
+	Button: {target}, {title}
+</f:section>
+
+<f:section name="Main">
+	<div class="redetoby">{title} {yeah}</div>
+	<f:render section="Button" arguments="{_all}" />
+	<v:asset.style dependencies="principal" name="redetoby"> 
+	.redetoby{background:red}
+	</v:asset.style>
+</f:section>
+
+<f:section name="Button">
+	<f:if condition="{target -> v:math.round()} > 0">
+		<f:then>
+			<f:link.page pageUid="{target}" class="button small radius" title="{title}" additionalParams="{puid:'{v:page.info(field:\'uid\')}'}">
+				{title}	
+			</f:link.page>
+		</f:then>
+		<f:else>
+			<a href="{target}" class="button small radius" title="{title}">
+				{title}
+			</a>
+		</f:else>
+	</f:if>
+</f:section>

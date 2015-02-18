@@ -1,0 +1,56 @@
+
+# customsubcategory=general=LLL:EXT:bhsiteconf/Resources/Private/Language/locallang_db.xlf:constant.cat.general
+# customsubcategory=resources=LLL:EXT:bhsiteconf/Resources/Private/Language/locallang_db.xlf:constant.cat.resources
+# customsubcategory=language=LLL:EXT:bhsiteconf/Resources/Private/Language/locallang_db.xlf:constant.cat.language
+# customsubcategory=extension=LLL:EXT:bhsiteconf/Resources/Private/Language/locallang_db.xlf:constant.cat.extension
+
+plugin.tx_bhsiteconf.settings {
+	# cat=plugin.tx_bhsiteconf/general/0010; type=string; label=LLL:EXT:bhsiteconf/Resources/Private/Language/locallang_db.xlf:constant.settings.headerText
+	headerText = Realized by: B Human S.r.L.  
+	# cat=plugin.tx_bhsiteconf/general/0020; type=string; label=LLL:EXT:bhsiteconf/Resources/Private/Language/locallang_db.xlf:constant.settings.page.footer.includePagesInMenu
+	page.footer.includePagesInMenu =
+
+	# cat=plugin.tx_bhsiteconf/general/0020; type=string; label=LLL:EXT:bhsiteconf/Resources/Private/Language/locallang_db.xlf:constant.settings.page.header.includePagesInMenu
+	page.header.includePagesInMenu = 
+
+
+}
+
+plugin.tx_bhsiteconf.extensionSetup{
+	# cat=plugin.tx_bhsiteconf/extension/0010; type=boolean; label=LLL:EXT:bhsiteconf/Resources/Private/Language/locallang_db.xlf:constant.extensionSetup.realurlEnable
+	realurlEnable=0
+	# cat=plugin.tx_bhsiteconf/extension/0020; type=string; label=LLL:EXT:bhsiteconf/Resources/Private/Language/locallang_db.xlf:constant.extensionSetup.realurlPath
+	realurlPath = 
+}
+
+
+
+plugin.tx_bhsiteconf.view {
+	# cat=plugin.tx_bhsiteconf/file/0010; type=string; label=LLL:EXT:bhsiteconf/Resources/Private/Language/locallang_db.xlf:constant.file.templateRootPath
+	templateRootPath = EXT:bhsiteconf/Resources/Private/Templates/
+	# cat=plugin.tx_bhsiteconf/file/0020; type=string; label=LLL:EXT:bhsiteconf/Resources/Private/Language/locallang_db.xlf:constant.file.partialsRootPath
+	partialRootPath = EXT:bhsiteconf/Resources/Private/Partials/
+	# cat=plugin.tx_bhsiteconf/file/0030; type=string; label=LLL:EXT:bhsiteconf/Resources/Private/Language/locallang_db.xlf:constant.file.layoutRootPath
+	layoutRootPath = EXT:bhsiteconf/Resources/Private/Layouts/
+	# cat=plugin.tx_bhsiteconf/file/0040; type=string; label=LLL:EXT:bhsiteconf/Resources/Private/Language/locallang_db.xlf:constant.file.overlaysRootPath
+	overlaysRootPath = EXT:bhsiteconf/Resources/Private/Ext/
+}
+
+plugin.tx_bhsiteconf.resource {
+	# cat=plugin.tx_bhsiteconf/resources/0010; type=string; label=LLL:EXT:bhsiteconf/Resources/Private/Language/locallang_db.xlf:constant.resource.cssPath	
+	cssPath = EXT:bhsiteconf/Resources/Public/css/
+	# cat=plugin.tx_bhsiteconf/resources/0020; type=string; label=LLL:EXT:bhsiteconf/Resources/Private/Language/locallang_db.xlf:constant.resource.jsPath
+	jsPath = EXT:bhsiteconf/Resources/Public/js/
+}
+
+plugin.tx_bhsiteconf.language {
+	# cat=plugin.tx_bhsiteconf/language/0010; type=int; label=LLL:EXT:bhsiteconf/Resources/Private/Language/locallang_db.xlf:constant.language.languageUid
+	languageUid=0
+	# cat=plugin.tx_bhsiteconf/language/0020; type=string; label=LLL:EXT:bhsiteconf/Resources/Private/Language/locallang_db.xlf:constant.language.languageName
+	languageName=it
+	# cat=plugin.tx_bhsiteconf/language/0030; type=string; label=LLL:EXT:bhsiteconf/Resources/Private/Language/locallang_db.xlf:constant.language.languageKey
+	languageKey=it_IT
+	# cat=plugin.tx_bhsiteconf/language/0040; type=string; label=LLL:EXT:bhsiteconf/Resources/Private/Language/locallang_db.xlf:constant.language.languageLocale
+	languageLocale=it_IT.utf8	
+}
+# add other languages when needed

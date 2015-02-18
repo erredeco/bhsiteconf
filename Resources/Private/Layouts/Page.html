@@ -1,0 +1,12 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<f:layout name="Page" />
+
+<body id="page-{v:page.info(field: 'uid')}" class="page {f:cObject(typoscriptObjectPath: 'lib.pageLevel')} layout-{v:page.info(field: 'layout')}">
+	<f:render section="Resources" arguments="{_all}" />
+	<f:render section="AllSiteTitle" partial="CommonPageObjects" />
+	<f:render section="JumpMenu" partial="CommonPageObjects" />	
+	<f:render section="PageTitle" partial="CommonPageObjects" />
+	<f:render partial="MainMenu"/>
+	<f:render partial="Breadcrumbs"/>
+	<f:render section="Main" />
+	<f:render partial="Footer" />

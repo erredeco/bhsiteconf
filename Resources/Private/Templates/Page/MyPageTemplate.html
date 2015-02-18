@@ -1,0 +1,97 @@
+{namespace flux=FluidTYPO3\Flux\ViewHelpers}
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+<f:layout name="Page" />
+<f:section name="Configuration">
+	<flux:form id="fluidfluxpage" label="Main Page Template" options="{icon:'{f:uri.resource(path: \'Icons/Page.gif\')}'}">
+	<flux:form.sheet name="settings.basics">   
+		<flux:field.checkbox name="settings.includenavigation" default="1"/>
+		<flux:field.checkbox name="settings.includebanner" default="1"/>
+
+		<flux:grid>
+			<flux:grid.row>
+				<flux:grid.column colspan="2" colPos="0" name="settings.column0"/>
+				<flux:grid.column colPos="1" name="settings.column1"/>
+			</flux:grid.row>
+			<flux:grid.row>
+				<flux:grid.column colspan="3" colPos="2" name="settings.column2" />
+			</flux:grid.row>
+		</flux:grid>
+	</flux:form.sheet>
+	</flux:form>
+</f:section>
+
+<f:section name="Resources">
+	<f:render partial="CommonPageObjects" section="SharedResources" />
+</f:section>
+
+<f:section name="MainWithoutNavigation">
+	<v:content.render column="1" as="sideContentElements">
+	  <div id="content" class="{f:if(condition: '{sideContentElements}', then: 'medium-9 large-9', else: 'medium-12 large-12')} columns">
+	  	<v:content.render column="0" />
+	  </div>
+		<f:if condition="{sideContentElements}">
+			<div id="extra" class="medium-3 large-3 columns">
+				<f:for each="{sideContentElements}" as="sideContentElement">
+					{sideContentElement -> f:format.raw()}
+				</f:for>
+			</div>
+		</f:if>
+	</v:content.render>
+</f:section>
+
+<f:section name="MainWithNavigation">
+	<nav id="submenu" class="medium-3 large-3 columns">
+		<f:render section="SubMenu" partial="Menu"/>
+		
+
+		<f:comment>
+			<f:cObject typoscriptObjectPath="lib.submenu" />
+		</f:comment>
+	</nav>
+	<v:content.render column="1" as="sideContentElements">
+	  <div id="content" class="{f:if(condition: '{sideContentElements}', then: 'medium-6 large-6', else: 'medium-9 large-9')} columns">
+	  	<v:content.render column="0" />
+	  </div>
+		<f:if condition="{sideContentElements}">
+			<div id="extra" class="medium-3 large-3 columns">
+				<f:for each="{sideContentElements}" as="sideContentElement">
+					{sideContentElement -> f:format.raw()}
+				</f:for>
+			</div>
+		</f:if>
+	</v:content.render>
+</f:section>
+
+<f:section name="Main">
+	<f:if condition="{settings.includebanner}== 1">
+		<div class="row">
+		  <div id="content" class="medium-12 large-12 columns">
+				<f:cObject typoscriptObjectPath="lib.imageBanner" />
+		  </div>
+		</div>		
+	</f:if>
+	<div class="row">
+		<f:if condition="{settings.includenavigation}">
+	    <f:then>
+	    	<f:if condition="{f:cObject(typoscriptObjectPath:'lib.testSubmenu')}"> 
+	    		<f:then><f:render section="MainWithNavigation" /></f:then>
+	    		<f:else><f:render section="MainWithoutNavigation" /></f:else>
+	    	</f:if>
+	    </f:then>
+	    <f:else>
+	        <f:render section="MainWithoutNavigation" />
+	    </f:else>
+		</f:if>		
+	</div>
+	<div class="row">
+	  <div class="small-12 medium-12 large-12 columns"><v:content.render column="2" /></div>
+	</div>
+	<f:render section="LinkToTop" partial="CommonPageObjects" />
+</f:section>
+
+
+
+
+
+
+

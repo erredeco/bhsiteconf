@@ -1,0 +1,48 @@
+/*
+plugin.tx_news{
+
+
+  view {
+    overlays{
+      bhsiteconf.partialRootPath = {$plugin.tx_bhsiteconf.view.overlaysRootPath}News/Partials/
+      bhsiteconf.templateRootPath = {$plugin.tx_bhsiteconf.view.overlaysRootPath}News/Templates/
+    }
+  }
+*/
+
+
+plugin.tx_news {
+  view {
+     
+    templateRootPaths {
+      100 = EXT:news/Resources/Private/Templates/
+      110 = {$plugin.tx_bhsiteconf.view.overlaysRootPath}News/Templates/
+    }
+    
+    partialRootPaths {
+      100 = EXT:news/Resources/Private/Partials/
+      110 = {$plugin.tx_bhsiteconf.view.overlaysRootPath}News/Partials/
+    }
+  }
+}
+
+
+
+plugin.tx_news{
+
+  settings {
+    #Reset CSS file
+    cssFile >
+
+    #No dummy image in list if no media!
+    displayDummyIfNoMedia = 0  
+  }
+
+
+  # Modify the translation
+    _LOCAL_LANG {
+      default {
+      # read_more = more >>
+    }
+  }
+}

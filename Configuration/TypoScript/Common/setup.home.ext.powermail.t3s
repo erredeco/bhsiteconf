@@ -1,0 +1,23 @@
+/*
+plugin.tx_powermail{
+  view {
+    overlays{
+      bhsiteconf.partialRootPath = {$plugin.tx_bhsiteconf.view.overlaysRootPath}Powermail/Partials/
+    }
+  }
+}
+*/
+plugin.tx_powermail {
+  view {
+    partialRootPath >
+    partialRootPaths {
+      10 = EXT:powermail/Resources/Private/Partials/      
+      20 = {$plugin.tx_bhsiteconf.view.overlaysRootPath}Powermail/Partials/
+            
+    }
+  }
+}
+
+
+
+
