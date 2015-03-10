@@ -1,63 +1,56 @@
-{namespace flux=FluidTYPO3\Flux\ViewHelpers}
-{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers} {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 <f:layout name="Content" />
-<div xmlns="http://www.w3.org/1999/xhtml"
-     xmlns:v="http://fedext.net/ns/vhs/ViewHelpers"
-     xmlns:flux="http://fedext.net/ns/flux/ViewHelpers"
-     xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
-
-<f:section name="Configuration">
-	<flux:form id="tabs" options="{group:'Foundation Elements', icon:'{f:uri.resource(path: \'Icons/Content/bhsiteconf_tabs.png\')}'}">
-		<flux:form.sheet name="display">
-			<flux:field.checkbox name="vertical" />
-		</flux:form.sheet>
-		<flux:form.sheet name="tabs">
-			<flux:form.section name="tabs">
-				<flux:form.object name="tab">
-					<flux:field.input name="title" />
-					<flux:field.checkbox name="active" />
-				</flux:form.object>
-			</flux:form.section>
-		</flux:form.sheet>
-		<flux:form.sheet name="other">
-			<flux:field.checkbox name="deeplinking" />
-		</flux:form.sheet>
-		<flux:grid>
-			<flux:grid.row>
-				<f:if condition="{tabs}">
-					<f:for each="{tabs}" as="tab" iteration="iteration">
-						<flux:grid.column style="width: {v:math.division(b: '{tabs -> f:count()}', a: 100)}%" name="content.{iteration.index}" label="{f:if(condition: tab.tab.title, then: tab.tab.title, else: 'Content, Tab {iteration.cycle}')}" />
-					</f:for>
-				</f:if>
-			</flux:grid.row>
-		</flux:grid>
-	</flux:form>
-</f:section>
-
-<f:section name="Preview">
-	<flux:widget.grid />
-</f:section>
-
-<f:section name="Main">
-	<v:variable.set name="activeTabIndex" value="0" />
-	<f:for each="{tabs}" as="tab" iteration="iteration">
-		<f:if condition="{tab.tab.active}">
-			<v:variable.set name="activeTabIndex" value="{iteration.index}" />
-		</f:if>
-	</f:for>
-	<dl class="tabs {f:if(condition: vertical, then: 'vertical')}" data-tab {f:if(condition: deeplinking, then: 'data-options="deep_linking:true"')} role="tablist">
-		<f:for each="{tabs}" as="tab" iteration="iteration">
-			<dd id="tab-{record.uid}-{iteration.index}" class="{f:if(condition: '{activeTabIndex} == {iteration.index}', then: 'active')}" role="tab" aria-controls="tabs-{record.uid}-{iteration.index}">
-				<a href="#tabs-{record.uid}-{iteration.index}">{tab.tab.title}</a>
-			</dd>
-		</f:for>
-	</dl>
-	<div class="tabs-content {f:if(condition: vertical, then: 'vertical')}">
-		<f:for each="{tabs}" as="tab" iteration="iteration">
-			<div class="content {f:if(condition: '{activeTabIndex} == {iteration.index}', then: 'active')}" id="tabs-{record.uid}-{iteration.index}" role="tabpanel" aria-hidden="{f:if(condition: '{activeTabIndex} == {iteration.index}', then: 'false', else:'true')}" aria-labelledby="tab-{record.uid}-{iteration.index}" >
-				<flux:content.render area="content.{iteration.index}" />
-			</div>
-		</f:for>
-	</div>
-</f:section>
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:v="http://fedext.net/ns/vhs/ViewHelpers" xmlns:flux="http://fedext.net/ns/flux/ViewHelpers" xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
+        <f:section name="Configuration">
+                <flux:form id="tabs" options="{group:'Foundation Elements', icon:'{f:uri.resource(path: \'Icons/Content/bhsiteconf_tabs.png\')}'}">
+                        <flux:form.sheet name="display">
+                                <flux:field.checkbox name="vertical" />
+                        </flux:form.sheet>
+                        <flux:form.sheet name="tabs">
+                                <flux:form.section name="tabs">
+                                        <flux:form.object name="tab">
+                                                <flux:field.input name="title" />
+                                                <flux:field.checkbox name="active" />
+                                        </flux:form.object>
+                                </flux:form.section>
+                        </flux:form.sheet>
+                        <flux:form.sheet name="other">
+                                <flux:field.checkbox name="deeplinking" />
+                        </flux:form.sheet>
+                        <flux:grid>
+                                <flux:grid.row>
+                                        <f:if condition="{tabs}">
+                                                <f:for each="{tabs}" as="tab" iteration="iteration">
+                                                        <flux:grid.column style="width: {v:math.division(b: '{tabs -> f:count()}', a: 100)}%" name="content.{iteration.index}" label="{f:if(condition: tab.tab.title, then: tab.tab.title, else: 'Content, Tab {iteration.cycle}')}" />
+                                                </f:for>
+                                        </f:if>
+                                </flux:grid.row>
+                        </flux:grid>
+                </flux:form>
+        </f:section>
+        <f:section name="Preview">
+                <flux:widget.grid />
+        </f:section>
+        <f:section name="Main">
+                <v:variable.set name="activeTabIndex" value="0" />
+                <f:for each="{tabs}" as="tab" iteration="iteration">
+                        <f:if condition="{tab.tab.active}">
+                                <v:variable.set name="activeTabIndex" value="{iteration.index}" />
+                        </f:if>
+                </f:for>
+                <dl class="tabs {f:if(condition: vertical, then: 'vertical')}" data-tab {f:if(condition: deeplinking, then: 'data-options="deep_linking:true"')} role="tablist">
+                        <f:for each="{tabs}" as="tab" iteration="iteration">
+                                <dd id="tab-{record.uid}-{iteration.index}" class="{f:if(condition: '{activeTabIndex} == {iteration.index}', then: 'active')}" role="tab" aria-controls="tabs-{record.uid}-{iteration.index}">
+                                        <a href="#tabs-{record.uid}-{iteration.index}">{tab.tab.title}</a>
+                                </dd>
+                        </f:for>
+                </dl>
+                <div class="tabs-content {f:if(condition: vertical, then: 'vertical')}">
+                        <f:for each="{tabs}" as="tab" iteration="iteration">
+                                <div class="content {f:if(condition: '{activeTabIndex} == {iteration.index}', then: 'active')}" id="tabs-{record.uid}-{iteration.index}" role="tabpanel" aria-hidden="{f:if(condition: '{activeTabIndex} == {iteration.index}', then: 'false', else:'true')}" aria-labelledby="tab-{record.uid}-{iteration.index}">
+                                        <flux:content.render area="content.{iteration.index}" />
+                                </div>
+                        </f:for>
+                </div>
+        </f:section>
 </div>

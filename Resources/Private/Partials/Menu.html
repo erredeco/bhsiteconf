@@ -1,63 +1,60 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
-
 <f:section name="Breadcrumbs">
-	<div class="row">
-		<div class="small-12 medium-12 large-12 columns">
-			<v:page.breadCrumb showHiddenInMenu="1" linkCurrent="FALSE" class="breadcrumbs" classLast="current" tagName="nav" additionalAttributes="{role:'menubar',aria-label:'breadcrumbs'}"/>
-		</div>
-	 </div> 
+        <div class="row">
+                <div class="small-12 medium-12 large-12 columns">
+                        <v:page.breadCrumb showHiddenInMenu="1" linkCurrent="FALSE" class="breadcrumbs" classLast="current" tagName="nav" additionalAttributes="{role:'menubar',aria-label:'breadcrumbs'}" />
+                </div>
+        </div>
 </f:section>
-
 <f:section name="MainMenu">
-	<div class="row">
-		<nav class="mainmenu small-12 medium-12 large-12 columns">
-			<v:page.menu entryLevel="0" levels="1">
-				<ul class="side-nav">
-					<f:for each="{menu}" as="item">
-						<li class="{f:if(condition:'{item.active}',then:'active')} {f:if(condition:'{item.current}',then:'current')}">
-			        <f:link.page pageUid="{item.uid}" title="{f:if(condition:'{item.nav_title}',then:'{item.nav_title}',else:'{item.title}')}">
-								<f:if condition="{item.nav_title}">
-							    <f:then>{item.nav_title}</f:then>
-							    <f:else>{item.title}</f:else>
-								</f:if>
-			        </f:link.page>
-						</li>
-					</f:for>
-				</ul>	
-			</v:page.menu>
-		</nav>
-	</div>
+        <div class="row">
+                <nav class="mainmenu small-12 medium-12 large-12 columns">
+                        <v:page.menu entryLevel="0" levels="1">
+                                <ul class="side-nav">
+                                        <f:for each="{menu}" as="item">
+                                                <li class="{f:if(condition:'{item.active}',then:'active')} {f:if(condition:'{item.current}',then:'current')}">
+                                                        <f:link.page pageUid="{item.uid}" title="{f:if(condition:'{item.nav_title}',then:'{item.nav_title}',else:'{item.title}')}">
+                                                                <f:if condition="{item.nav_title}">
+                                                                        <f:then>{item.nav_title}</f:then>
+                                                                        <f:else>{item.title}</f:else>
+                                                                </f:if>
+                                                        </f:link.page>
+                                                </li>
+                                        </f:for>
+                                </ul>
+                        </v:page.menu>
+                </nav>
+        </div>
 </f:section>
-
 <f:section name="SubMenu">
-	<v:page.menu levels="2" entryLevel="1">	
-		<ul class="side-nav">
-			<f:for each="{menu}" as="item">	
-        <li class="{f:if(condition:'{item.active}',then:'active')} {f:if(condition:'{item.current}',then:'current')}">
-          <f:link.page pageUid="{item.uid}" title="{f:if(condition:'{item.nav_title}',then:'{item.nav_title}',else:'{item.title}')}">
-						<f:if condition="{item.nav_title}">
-			    		<f:then>{item.nav_title}</f:then>
-			    		<f:else>{item.title}</f:else>
-						</f:if>
-      		</f:link.page>
-					<f:if condition="{item.hasSubPages}">
-              <v:page.menu pageUid="{item.uid}">
-              	<ul>
-                  <f:for each="{menu}" as="subItem">
-                     <li class="{f:if(condition:'{subItem.active}',then:'active')} {f:if(condition:'{subItem.current}',then:'current')}">
-                      	<f:link.page pageUid="{subItem.uid}" title="{f:if(condition:'{subItem.nav_title}',then:'{subItem.nav_title}',else:'{subItem.title}')}">
-													<f:if condition="{subItem.nav_title}">
-											    	<f:then>{subItem.nav_title}</f:then>
-											    	<f:else>{subItem.title}</f:else>
-													</f:if>
-                      	</f:link.page>
-                      </li>
-                  	</f:for>
-              	</ul>
-              </v:page.menu>
-          </f:if>
-        </li>
-			</f:for>
-		</ul>				
-	</v:page.menu>
+        <v:page.menu levels="2" entryLevel="1">
+                <ul class="side-nav">
+                        <f:for each="{menu}" as="item">
+                                <li class="{f:if(condition:'{item.active}',then:'active')} {f:if(condition:'{item.current}',then:'current')}">
+                                        <f:link.page pageUid="{item.uid}" title="{f:if(condition:'{item.nav_title}',then:'{item.nav_title}',else:'{item.title}')}">
+                                                <f:if condition="{item.nav_title}">
+                                                        <f:then>{item.nav_title}</f:then>
+                                                        <f:else>{item.title}</f:else>
+                                                </f:if>
+                                        </f:link.page>
+                                        <f:if condition="{item.hasSubPages}">
+                                                <v:page.menu pageUid="{item.uid}">
+                                                        <ul>
+                                                                <f:for each="{menu}" as="subItem">
+                                                                        <li class="{f:if(condition:'{subItem.active}',then:'active')} {f:if(condition:'{subItem.current}',then:'current')}">
+                                                                                <f:link.page pageUid="{subItem.uid}" title="{f:if(condition:'{subItem.nav_title}',then:'{subItem.nav_title}',else:'{subItem.title}')}">
+                                                                                        <f:if condition="{subItem.nav_title}">
+                                                                                                <f:then>{subItem.nav_title}</f:then>
+                                                                                                <f:else>{subItem.title}</f:else>
+                                                                                        </f:if>
+                                                                                </f:link.page>
+                                                                        </li>
+                                                                </f:for>
+                                                        </ul>
+                                                </v:page.menu>
+                                        </f:if>
+                                </li>
+                        </f:for>
+                </ul>
+        </v:page.menu>
 </f:section>

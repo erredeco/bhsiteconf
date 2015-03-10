@@ -1,12 +1,16 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 <hr />
 <div id="footer" class="container" role="contentinfo">
-	&copy; <f:format.date format="Y" date="now" /> <f:translate key="page.label.footer.bhcopyright" />
-	<nav class="infofooter"  role="navigation">
-  	<v:page.menu.list showHiddenInMenu="1" pages="{settings.page.footer.includePagesInMenu}"/>
-	</nav>
-	<f:link.external uri="http://www.w3.org/html/logo/" class="noicon"><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="83" height="32" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics" /></f:link.external>
-	<f:link.external uri="http://typo3.org/" class="noicon"><f:image src="{f:uri.resource(path:'Assets/Img_layout/typo3-logo.png')}" alt="Powered by TYPO3 CMS" title="Powered by TYPO3 CMS" /></f:link.external>
-		
-	<f:render section="LinkToTop" partial="CommonPageObjects" />
+        &copy;
+        <f:format.date format="Y" date="now" />
+        <f:translate key="page.label.footer.bhcopyright" />
+        <nav class="infofooter" role="navigation">
+                <v:page.menu.list showHiddenInMenu="1" pages="{settings.page.footer.includePagesInMenu}" />
+        </nav>
+        <f:link.external uri="http://www.w3.org/html/logo/" class="noicon">
+                <img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="83" height="32" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics" />
+        </f:link.external>
+        <f:link.external uri="http://typo3.org/" class="noicon">
+                <f:image src="{f:uri.resource(path:'Assets/Img_layout/typo3-logo.png')}" alt="Powered by TYPO3 CMS" title="Powered by TYPO3 CMS" /></f:link.external>
+        <f:render section="LinkToTop" partial="CommonPageObjects" />
 </div>

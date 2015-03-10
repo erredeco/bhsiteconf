@@ -1,0 +1,26 @@
+{
+  "name": "bhsiteconf",
+  "version": "0.0.1",
+  "homepage": "https://github.com/erredeco/bhsiteconf",
+  "description": "first try to assemble with bower and grunt",
+  "keywords": [
+    "bhsiteconf"
+  ],
+  "authors": [
+    "Riccardo De Contardi"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "modernizr": ">= 2.7.2",
+    "bower-foundation": "https://github.com/zurb/bower-foundation.git#master",
+    "myfoundation-scss-only": "https://github.com/erredeco/myfoundation-scss-only.git#master"
+  }
+}

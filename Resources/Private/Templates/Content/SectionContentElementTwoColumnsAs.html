@@ -1,25 +1,23 @@
-{namespace flux=FluidTYPO3\Flux\ViewHelpers}
-{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+{namespace flux=FluidTYPO3\Flux\ViewHelpers} {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 <f:layout name="Content" />
-
 <f:section name="Configuration">
-	<flux:form id="fluidfluxcontent" label="Section Content Element, 2 Columns, Asymmetric" options="{group:'FCE', icon:'{f:uri.resource(path: \'Icons/Content/bhsiteconf_2cols_a.png\')}'">
-		<flux:grid>
-			<flux:grid.row>
-				<flux:grid.column style="width:75%;border-right: 1px dotted #999;" name="subcolumn-1" label="Subcolumn left" />
-				<flux:grid.column style="width:25%" name="subcolumn-2" label="Subcolumn right" />
-			</flux:grid.row>
-		</flux:grid>
-	</flux:form>
+        <flux:form id="fluidfluxcontent" label="Section Content Element, 2 Columns, Asymmetric" options="{group:'FCE', icon:'{f:uri.resource(path: \'Icons/Content/bhsiteconf_2cols_a.png\')}'">
+                <flux:grid>
+                        <flux:grid.row>
+                                <flux:grid.column style="width:75%;border-right: 1px dotted #999;" name="subcolumn-1" label="Subcolumn left" />
+                                <flux:grid.column style="width:25%" name="subcolumn-2" label="Subcolumn right" />
+                        </flux:grid.row>
+                </flux:grid>
+        </flux:form>
 </f:section>
-
 <f:section name="Preview">
-	<flux:widget.grid /> 
+        <flux:widget.grid />
 </f:section>
-
 <f:section name="Main">
-	<div class="row">
-	  <div class="medium-7 large-9 columns"><flux:content.render area="subcolumn-1" /> </div>
-	  <div class="medium-5 large-3 columns"><flux:content.render area="subcolumn-2" /> </div>
-	</div>
+        <div class="row">
+                <div class="medium-7 large-9 columns">
+                        <flux:content.render area="subcolumn-1" /> </div>
+                <div class="medium-5 large-3 columns">
+                        <flux:content.render area="subcolumn-2" /> </div>
+        </div>
 </f:section>
