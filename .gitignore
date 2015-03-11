@@ -9,6 +9,7 @@ dist
 
 bower_components
 node_modules
-Source/assets/scss
-Source/assets/js/vendor
+Source/scss
 Bck
+Resources/Public/Assets/Css
+Resources/Public/Assets/Js/Vendor

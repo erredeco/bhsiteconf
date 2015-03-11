@@ -1,13 +1,13 @@
 {namespace vh=In2code\Powermail\ViewHelpers}
 <div class="row">
-        <div id="powermail_fieldwrap_{field.uid}" class="medium-6 large-6 columns powermail_fieldwrap powermail_fieldwrap_select powermail_fieldwrap_{field.uid} {field.css}">
-                <label for="powermail_field_{field.marker}" class="right inline powermail_label" title="{field.description}">
-                        <vh:string.RawAndRemoveXss>{field.title}</vh:string.RawAndRemoveXss>
-                        <f:if condition="{field.mandatory}"><span class="mandatory">*</span>
-                        </f:if>
-                </label>
-        </div>
-        <div class="medium-6 large-6 columns">
-                <vh:Form.SelectField options="{field.modifiedSettings}" property="{field.marker}" class="powermail_field powermail_select {vh:Validation.ErrorClass(field:field, class:'powermail_field_error')}" id="powermail_field_{field.marker}" additionalAttributes="{vh:Validation.ValidationDataAttribute(field:field)}" multiple="{field.multiselectForField}" value="{vh:Misc.PrefillField(field:field, mail:mail)}" />
-        </div>
+    <div id="powermail_fieldwrap_{field.uid}" class="medium-6 large-6 columns powermail_fieldwrap powermail_fieldwrap_select powermail_fieldwrap_{field.uid} {field.css}">
+        <label for="powermail_field_{field.marker}" class="right inline powermail_label" title="{field.description}">
+            <vh:string.RawAndRemoveXss>{field.title}</vh:string.RawAndRemoveXss>
+            <f:if condition="{field.mandatory}"><span class="mandatory">*</span>
+            </f:if>
+        </label>
+    </div>
+    <div class="medium-6 large-6 columns">
+        <vh:Form.SelectField options="{field.modifiedSettings}" property="{field.marker}" class="powermail_field powermail_select {vh:Validation.ErrorClass(field:field, class:'powermail_field_error')}" id="powermail_field_{field.marker}" additionalAttributes="{vh:Validation.ValidationDataAttribute(field:field)}" multiple="{field.multiselectForField}" value="{vh:Misc.PrefillField(field:field, mail:mail)}" />
+    </div>
 </div>

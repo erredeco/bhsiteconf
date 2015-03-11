@@ -1,0 +1,21 @@
+{
+"files":[
+    "<%= vendor %>/bower-foundation/js/foundation/foundation.js",
+    "<%= vendor %>/bower-foundation/js/foundation/foundation.abide.js",
+    "<%= vendor %>/bower-foundation/js/foundation/foundation.accordion.js",
+    "<%= vendor %>/bower-foundation/js/foundation/foundation.alert.js",
+    "<%= vendor %>/bower-foundation/js/foundation/foundation.clearing.js",
+    "<%= vendor %>/bower-foundation/js/foundation/foundation.dropdown.js",
+    "<%= vendor %>/bower-foundation/js/foundation/foundation.equalizer.js",
+    "<%= vendor %>/bower-foundation/js/foundation/foundation.interchange.js",
+    "<%= vendor %>/bower-foundation/js/foundation/foundation.joyride.js",
+    "<%= vendor %>/bower-foundation/js/foundation/foundation.magellan.js",
+    "<%= vendor %>/bower-foundation/js/foundation/foundation.offcanvas.js",
+    "<%= vendor %>/bower-foundation/js/foundation/foundation.orbit.js",
+    "<%= vendor %>/bower-foundation/js/foundation/foundation.reveal.js",
+    "<%= vendor %>/bower-foundation/js/foundation/foundation.slider.js",
+    "<%= vendor %>/bower-foundation/js/foundation/foundation.tab.js",
+    "<%= vendor %>/bower-foundation/js/foundation/foundation.tooltip.js",
+    "<%= vendor %>/bower-foundation/js/foundation/foundation.topbar.js"
+  ]
+}

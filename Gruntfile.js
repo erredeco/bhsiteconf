@@ -3,22 +3,25 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     vendor: grunt.file.readJSON('.bowerrc').directory,
-    pkg: {
-      mine: grunt.file.readJSON('./package.json'),
-    },
-
+    pkg: grunt.file.readJSON('./package.json'),
 
     sourcedir: './Source',
     destinationdir: './Resources/Public/Assets/Js',
     bckdir: './Bck',
-                
+                        
     foundation: {
-          js: ['<%= sourcedir %>/assets/js/vendor/foundation/foundation.js', '<%= sourcedir %>/assets/js/vendor/foundation/foundation.*.js']
-        },
-
+      js: grunt.file.readJSON('foundationjs.json').files 
+    },
+    
+    
+    
+    //TASKS
+      
     //Clean
     clean:{
-      all: ['./Source/','.sass-cache'],
+      source: ['./Source/'],
+      cache: ['.sass-cache'],
+      bower: ['./<%= vendor %>'],
       bck: ['./Bck/'] 
     },
 
@@ -30,22 +33,15 @@ module.exports = function (grunt) {
           copy: false
         }
       }
-    }
+    },
 
-    //copies javascript files 
+    //copies  files 
+
     copy: { 
-      js: {
-        files: [
-          {src: './<%= vendor %>/modernizr/modernizr.js', dest: '<%= sourcedir %>/assets/js/vendor/modernizr.js'},
-          {expand:true, cwd: './<%= vendor %>/bower-foundation/js/', src: ['foundation/*.js'], dest: '<%= sourcedir %>/assets/js/vendor/', filter: 'isFile'}
-          
-        ]
-      },
-      
       //use this the 1st time to copy everything
       scss: {
         files: [
-          {expand:true, cwd: './<%= vendor %>/myfoundation-scss-only/source/', src: ['scss/**/*.scss'], dest: '<%= sourcedir %>/assets/'}
+          {expand:true, cwd: './<%= vendor %>/myfoundation-scss-only/source/', src: ['scss/**/*.scss'], dest: '<%= sourcedir %>/'}
         ]
       },
       //use this to backup scss and foundation javascript  files into another folder
@@ -53,23 +49,22 @@ module.exports = function (grunt) {
       backup: { 
       files:[
         {
-          expand:true, cwd: './<%= sourcedir %>/assets/', src: ['./**/*.*'], dest: '<%= bckdir %>/assets/',
+          expand:true, cwd: './<%= sourcedir %>/', src: ['./**/*.*'], dest: '<%= bckdir %>/',
 
         }  
       ]    
          
       }
-    },  
+    },     
 
     uglify: {
           options: {
               preserveComments: 'some'
-          },                    
-  
+          },                      
       js: {
         files: {
-          '<%= destinationdir%>/foundation.min.js': ['<%= foundation.js %>'],
-          '<%= destinationdir%>/modernizr.min.js': ['<%= sourcedir %>/assets/js/vendor/modernizr.js'],
+          '<%= destinationdir%>/Vendor/foundation.min.js': ['<%= foundation.js %>'],
+          '<%= destinationdir%>/Vendor/modernizr.min.js': ['./<%= vendor %>/modernizr/modernizr.js'],
           '<%= destinationdir%>/app.min.js': ['<%= destinationdir%>/app.js']
         }
       },
@@ -91,23 +86,12 @@ module.exports = function (grunt) {
   compass: {
       dist: {
         options: {
-          config: './<%= vendor %>/myfoundation-scss-only/config.rb',  
-          cssDir: 'Resources/Public/Assets/Css',
-          sassDir: 'Source/assets/scss',
-          imagesDir: 'Resources/Public/Assets/Img_layout',
-          fontsDir: 'Resources/Public/Assets/Fonts',
-          javascriptsDir: 'Resources/Public/Assets/Js',          
-          environment: 'development', //development or production
-          outputStyle: 'expanded' //nested, expanded, compact, compressed 
-
+          config: './config.rb'
         }
       }
     },  
      
-    watch: {
-      options:{
-        livereload: true,
-      },      
+    watch: {    
       grunt: {
         options: {
           reload: true,
@@ -116,21 +100,14 @@ module.exports = function (grunt) {
         files: ['Gruntfile.js'],
         tasks: ['build']
       },
-
       js: {
-        files: ['<%= sourcedir %>/assets/js/**/*.js'],
-        tasks: ['uglify','newer:uglify'],
-        
+        files: ['foundationjs.json'],
+        tasks: ['uglify','newer:uglify'],        
       },    
-      prettify: {
-        files: ['./Resources/Private/**/*.html'],
-        tasks: ['prettify:all','newer:prettify:all'],
-         
-      },
       
        compass: {
-        files: ['<%= sourcedir %>/assets/scss/**/*.scss'],
-        tasks: ['compass'],
+        files: ['<%= sourcedir %>/scss/**/*.scss'],
+        tasks: ['compass:dist','newer:compass:dist'],
         
       },          
     }
@@ -138,8 +115,7 @@ module.exports = function (grunt) {
 
   /* load plugin in package.json */
   grunt.loadNpmTasks('grunt-bower-task');
-  grunt.loadNpmTasks('grunt-contrib-clean'); 
-  
+  grunt.loadNpmTasks('grunt-contrib-clean');   
   grunt.loadNpmTasks('grunt-contrib-copy'); 
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-prettify');
@@ -148,9 +124,10 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-newer'); 
   
   /* grunt tasks */
-  grunt.registerTask('cleaner',['clean:all']);
-  grunt.registerTask('initialize',['cleaner','bower:install','copy:js','copy:scss']);
-  grunt.registerTask('build',['uglify','prettify','compass']); 
+  grunt.registerTask('cleaner',['clean:source','clean:cache','clean:bower','clean:bck']);
+  grunt.registerTask('initialize',['clean:source','clean:cache','bower:install','copy:scss']);
+  grunt.registerTask('build',['uglify','compass']);    
   grunt.registerTask('default', ['build','watch']);
+  grunt.registerTask ('prettifyhtml',['prettify:all']);
   grunt.registerTask('backup',['clean:bck','copy:backup']);   
 };

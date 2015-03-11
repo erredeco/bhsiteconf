@@ -1,42 +1,42 @@
 {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 <div class="row">
-        <div class="large-12 columns">
-                <nav class="top-bar" data-topbar role="navigation">
-                        <ul class="title-area">
-                                <li class="name">
-                                        <h1><a href="#">My Site</a>
-                                        </h1>
-                                </li>
-                                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
-                                </li>
-                        </ul>
-                        <section class="top-bar-section">
-                                <v:page.menu entryLevel="0" levels="2" expandAll="1" classHasSubpages="has-dropdown">
-                                        <ul class="left" role="menubar">
-                                                <f:for each="{menu}" as="item">
-                                                        <li class="divider hide-for-small" role="separator"></li>
-                                                        <li class="{item.class}" {f:if(condition: '{item.hasSubPages}',then: 'aria-haspopup="true"')} role="menuitem">
-                                                                <v:link.typolink configuration="{parameter:'{item.link}', title: '{item.linktext}'}">
-                                                                        {item.linktext}
-                                                                </v:link.typolink>
-                                                                <f:if condition="{item.hasSubPages}">
-                                                                        <v:page.menu pageUid="{item.uid}">
-                                                                                <ul class="dropdown" role="menu">
-                                                                                        <f:for each="{menu}" as="subItem">
-                                                                                                <li class="{subItem.class}" role="menuitem">
-                                                                                                        <v:link.typolink configuration="{parameter:'{subItem.link}', title: '{subItem.linktext}'}">
-                                                                                                                {subItem.linktext}
-                                                                                                        </v:link.typolink>
-                                                                                                </li>
-                                                                                        </f:for>
-                                                                                </ul>
-                                                                        </v:page.menu>
-                                                                </f:if>
-                                                        </li>
-                                                </f:for>
+    <div class="large-12 columns">
+        <nav class="top-bar" data-topbar role="navigation">
+            <ul class="title-area">
+                <li class="name">
+                    <h1><a href="#">My Site</a>
+                    </h1>
+                </li>
+                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
+                </li>
+            </ul>
+            <section class="top-bar-section">
+                <v:page.menu entryLevel="0" levels="2" expandAll="1" classHasSubpages="has-dropdown">
+                    <ul class="left" role="menubar">
+                        <f:for each="{menu}" as="item">
+                            <li class="divider hide-for-small" role="separator"></li>
+                            <li class="{item.class}" {f:if(condition: '{item.hasSubPages}',then: 'aria-haspopup="true"')} role="menuitem">
+                                <v:link.typolink configuration="{parameter:'{item.link}', title: '{item.linktext}'}">
+                                    {item.linktext}
+                                </v:link.typolink>
+                                <f:if condition="{item.hasSubPages}">
+                                    <v:page.menu pageUid="{item.uid}">
+                                        <ul class="dropdown" role="menu">
+                                            <f:for each="{menu}" as="subItem">
+                                                <li class="{subItem.class}" role="menuitem">
+                                                    <v:link.typolink configuration="{parameter:'{subItem.link}', title: '{subItem.linktext}'}">
+                                                        {subItem.linktext}
+                                                    </v:link.typolink>
+                                                </li>
+                                            </f:for>
                                         </ul>
-                                </v:page.menu>
-                        </section>
-                </nav>
-        </div>
+                                    </v:page.menu>
+                                </f:if>
+                            </li>
+                        </f:for>
+                    </ul>
+                </v:page.menu>
+            </section>
+        </nav>
+    </div>
 </div>

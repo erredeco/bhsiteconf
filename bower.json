@@ -1,6 +1,6 @@
 {
   "name": "bhsiteconf",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "homepage": "https://github.com/erredeco/bhsiteconf",
   "description": "first try to assemble with bower and grunt",
   "keywords": [

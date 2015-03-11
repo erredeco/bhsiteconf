@@ -1,37 +1,37 @@
 {namespace flux=FluidTYPO3\Flux\ViewHelpers} {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 <f:layout name="Content" />
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:flux="http://fedext.net/ns/flux/ViewHelpers" xmlns:v="http://fedext.net/ns/vhs/ViewHelpers" xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
-        <f:section name="Configuration">
-                <flux:form id="calltoaction" options="{group:'FCE', icon:'{f:uri.resource(path: \'Icons/Content/bhsiteconf_cta.png\')}'}">
-                        <flux:field.input name="target">
-                                <flux:wizard.link activeTab="'page'" />
-                        </flux:field.input>
-                        <flux:field.input name="text" />
-                        <flux:field.select name="size" items="tiny,small,large" size="1" maxItems="1" />
-                        <flux:field.checkbox name="expand" />
-                        <flux:field.input name="additionalsubject" />
-                        <flux:field.text name="intro" enableRichText="TRUE" />
-                </flux:form>
-        </f:section>
-        <f:section name="Preview">
-                Button: {target}, {text}
-        </f:section>
-        <f:section name="Main">
-                {intro -> f:format.html()}
-                <f:render section="Button" arguments="{_all}" />
-        </f:section>
-        <f:section name="Button">
-                <f:if condition="{target -> v:math.round()} > 0">
-                        <f:then>
-                                <f:link.page pageUid="{target}" class="button {size}  {f:if(condition: expand, then: 'expand')}  radius" title="{text}" additionalParams="{puid:'{v:page.info(field:\'uid\')}',addprm:'{record.uid}'}">
-                                        {text}
-                                </f:link.page>
-                        </f:then>
-                        <f:else>
-                                <a href="{target}" class="button {size} {f:if(condition: expand, then: 'expand')} radius" title="{text}">
+    <f:section name="Configuration">
+        <flux:form id="calltoaction" options="{group:'FCE', icon:'{f:uri.resource(path: \'Icons/Content/bhsiteconf_cta.png\')}'}">
+            <flux:field.input name="target">
+                <flux:wizard.link activeTab="'page'" />
+            </flux:field.input>
+            <flux:field.input name="text" />
+            <flux:field.select name="size" items="tiny,small,large" size="1" maxItems="1" />
+            <flux:field.checkbox name="expand" />
+            <flux:field.input name="additionalsubject" />
+            <flux:field.text name="intro" enableRichText="TRUE" />
+        </flux:form>
+    </f:section>
+    <f:section name="Preview">
+        Button: {target}, {text}
+    </f:section>
+    <f:section name="Main">
+        {intro -> f:format.html()}
+        <f:render section="Button" arguments="{_all}" />
+    </f:section>
+    <f:section name="Button">
+        <f:if condition="{target -> v:math.round()} > 0">
+            <f:then>
+                <f:link.page pageUid="{target}" class="button {size}  {f:if(condition: expand, then: 'expand')}  radius" title="{text}" additionalParams="{puid:'{v:page.info(field:\'uid\')}',addprm:'{record.uid}'}">
+                    {text}
+                </f:link.page>
+            </f:then>
+            <f:else>
+                <a href="{target}" class="button {size} {f:if(condition: expand, then: 'expand')} radius" title="{text}">
 				{text}
 			</a>
-                        </f:else>
-                </f:if>
-        </f:section>
+            </f:else>
+        </f:if>
+    </f:section>
 </div>

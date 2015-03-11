@@ -3,9 +3,12 @@ This extension is the provider for all the frontend configuration in TYPO3 CMS e
 it depends on flux, fluidcontent,fluidpages,vhs and the CSS is a customized version of Zurb Foundation.
                                                                       
 ##Installation instructions 
-####Install Ruby               
+####Install Ruby
+               
 gem install sass (*)
+
 gem install compass (*)
+
 gem install bundler (*) (**)
 
 bundle install (**)
@@ -22,13 +25,16 @@ npm install (*)
 ## available commands with grunt:
 
 - grunt cleaner
-	- deletes ./Source and sass-cache folders
+	- deletes ./Source, .sass-cache, /Bck and /bower_components folders! Use with care!!!
   
 - grunt initialize
- - performs clean, downloads dependencies from bower, copies relevant js and scss files to ./Source folder  
+ - performs clean, downloads dependencies from bower, copies scss files to ./Source folder  
   
 - grunt
-	- default task: concatenates and minifies all js files  in ./Source/assets/js/vendor/foundation; prettifies all html files in ./Resouces/Private/ and executes compass for the fiels in ./Source/assets/scss/
+	- default task: concatenates and minifies all js foundation files and executes compass for the fiels in ./Source/scss/ 
+  
+- grunt prettifyhtml
+ - prettify all html files in /Resources/Private  
  
 - grunt backup
  - copies all files from ./Source to ./Bck; it is useful when you want to update your bower components with initialize 
@@ -37,6 +43,7 @@ npm install (*)
 
 
 
-(*) run the command with "sudo " if it doesn't work
-(* *)This seems not anymore necessary; it should be necessary to compile Foundation's SCSS
+( * ) run the command with "sudo " if it doesn't work
+
+( * * )This seems not anymore necessary; it should be necessary to compile Foundation's SCSS
                             

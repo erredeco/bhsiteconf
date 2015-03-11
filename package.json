@@ -1,6 +1,6 @@
 {
   "name": "bhsiteconf",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "TYPO3 extension for frontend configuration, powered by fluid,flux,fluidpages,fluidcontent,vhs and inspired by Zurb Foundation",
   "main": "./index.html",
   "scripts": {
@@ -22,7 +22,7 @@
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-bower-task": "^0.4.0",
-    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-clean": "^0.6.0",  
     "grunt-contrib-compass": "^1.0.1",
     "grunt-contrib-copy": "^0.7.0",
     "grunt-contrib-uglify": "^0.7.0",
