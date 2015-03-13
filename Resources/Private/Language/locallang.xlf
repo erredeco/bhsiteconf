@@ -209,11 +209,26 @@
 			</trans-unit>
 
 
-
-
-
-
+			<trans-unit id="flux.sectioncetwocols" xml:space="preserve">
+				<source>Section Content Element, 2 Columns</source>
+			</trans-unit>
+			<trans-unit id="flux.sectioncetwocols.description" xml:space="preserve">
+				<source>Content element with two subcontainers of CEs</source>
+			</trans-unit>
  
+			<trans-unit id="flux.sectioncetwocolsas" xml:space="preserve">
+				<source>Section Content Element, 2 Columns Asymmetric</source>
+			</trans-unit>
+			<trans-unit id="flux.sectioncetwocolsas.description" xml:space="preserve">
+				<source>Content element with two subcontainers of CEs, Asymmetric</source>
+			</trans-unit>
+			<trans-unit id="flux.sectioncethreecols" xml:space="preserve">
+				<source>Section Content Element, 3 Columns</source>
+			</trans-unit>
+			<trans-unit id="flux.sectioncethreecols.description" xml:space="preserve">
+				<source>Content element with three subcontainers of CEs</source>
+			</trans-unit>
+
 			<trans-unit id="page.label.allsitetitle" xml:space="preserve">
 				<source>&lt;h1&gt;B Human S.r.L. &lt;/h1&gt; &lt;h2&gt; Profitable Innovation &lt;/h2&gt;</source>
 			</trans-unit> 

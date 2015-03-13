@@ -28,7 +28,7 @@ RTE.default.proc{
 	preserveDIVSections = 1	
 	
 	## TAGS ALLOWED OUTSIDE P & DIV
-	allowTagsOutside = address, article, aside, blockquote, footer, header, hr, nav, section, img
+	allowTagsOutside = address, article, aside, blockquote, footer, header, hr, nav, section, img, ul,dl
 	
 		## TAGS ALLOWED
 		## Added to the default internal list: b,i,u,a,img,br,div,center,pre,font,hr,sub,sup,p,strong,em,li,ul,ol,blockquote,strike,span

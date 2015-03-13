@@ -1,20 +1,17 @@
 module.exports = function (grunt) {
   'use strict';
-
   grunt.initConfig({
     vendor: grunt.file.readJSON('.bowerrc').directory,
     pkg: grunt.file.readJSON('./package.json'),
-
+    date: grunt.template.today("yyyy-mm-dd-HH.MM.ss"),
+    
     sourcedir: './Source',
     destinationdir: './Resources/Public/Assets/Js',
-    bckdir: './Bck',
-                        
+    bckdir: './Bck',                        
     foundation: {
       js: grunt.file.readJSON('foundationjs.json').files 
     },
-    
-    
-    
+
     //TASKS
       
     //Clean
@@ -47,13 +44,9 @@ module.exports = function (grunt) {
       //use this to backup scss and foundation javascript  files into another folder
       //please take note that you must do a diff after the update
       backup: { 
-      files:[
-        {
-          expand:true, cwd: './<%= sourcedir %>/', src: ['./**/*.*'], dest: '<%= bckdir %>/',
-
-        }  
-      ]    
-         
+      files: [
+        {expand:true, cwd: './<%= sourcedir %>/', src: ['./**/*.*'], dest: '<%= bckdir %>/<%= date%>-version<%= pkg.version%>'}  
+      ]            
       }
     },     
 
@@ -68,7 +61,6 @@ module.exports = function (grunt) {
           '<%= destinationdir%>/app.min.js': ['<%= destinationdir%>/app.js']
         }
       },
-
     },
     
   prettify: {
@@ -120,7 +112,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-prettify');
   grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks( 'grunt-contrib-watch' );  
+  grunt.loadNpmTasks('grunt-contrib-watch');  
   grunt.loadNpmTasks('grunt-newer'); 
   
   /* grunt tasks */
@@ -128,6 +120,7 @@ module.exports = function (grunt) {
   grunt.registerTask('initialize',['clean:source','clean:cache','bower:install','copy:scss']);
   grunt.registerTask('build',['uglify','compass']);    
   grunt.registerTask('default', ['build','watch']);
+  grunt.registerTask ('updatebower',['clean:bower','bower:install']);
   grunt.registerTask ('prettifyhtml',['prettify:all']);
-  grunt.registerTask('backup',['clean:bck','copy:backup']);   
+  grunt.registerTask('backup',['copy:backup']);   
 };

@@ -9,8 +9,18 @@ lib.parseFunc_RTE.nonTypoTagStdWrap.encapsLines.addAttributes.P.class >
 # Remove empty <p> after <hr> (?)
 lib.parseFunc_RTE.externalBlocks.hr.stripNL = 1
 
+### removes empty <p> before/after the elements
+### li is necessary because otherwise it remove every
+
+
+lib.parseFunc_RTE.externalBlocks := addToList(li)
+lib.parseFunc_RTE.externalBlocks{
+        li.stripNL=1
+        li.stdWrap.parseFunc = < lib.parseFunc
+}
+
 ### removes <p> around <hr> & <table> (replicato in css_styled_content.txt(?);forse puoi tirar via)
-### lib.parseFunc_RTE.externalBlocks = ol,ul,table,address, div, hr, blockquote
+### lib.parseFunc_RTE.externalBlocks = ol,ul,,table,address, div, hr, blockquote
 
 ### add content type to external div of CSC
 tt_content.stdWrap.innerWrap.cObject.default.20.15 = COA
