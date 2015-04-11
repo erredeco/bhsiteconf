@@ -2,7 +2,10 @@
 <f:layout name="Content" />
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:flux="http://fedext.net/ns/flux/ViewHelpers" xmlns:v="http://fedext.net/ns/vhs/ViewHelpers" xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
     <f:section name="Configuration">
-        <flux:form id="orbit" options="{group:'Foundation Elements', icon:'{f:uri.resource(path: \'Icons/Content/bhsiteconf_carousel.png\')}'}">
+        <flux:form id="orbit">
+            <flux:form.option name="icon" value="{f:uri.resource(path:'Icons/Content/bhsiteconf_carousel.png')}" />
+            <flux:form.option name="group" value="Foundation Elements" />
+
             <flux: field.select name="settings.orbit.animation" items="slide,fade" />
             <flux:field.checkbox name="settings.orbit.disablebullets" />
             <flux:field.checkbox name="settings.orbit.disablecircular" />

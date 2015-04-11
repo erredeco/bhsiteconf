@@ -2,7 +2,10 @@
 <f:layout name="Content" />
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:v="http://fedext.net/ns/vhs/ViewHelpers" xmlns:flux="http://fedext.net/ns/flux/ViewHelpers" xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
     <f:section name="Configuration">
-        <flux:form id="tabs" options="{group:'Foundation Elements', icon:'{f:uri.resource(path: \'Icons/Content/bhsiteconf_tabs.png\')}'}">
+        <flux:form id="tabs">
+            <flux:form.option name="icon" value="{f:uri.resource(path:'Icons/Content/bhsiteconf_tabs.png')}" />
+            <flux:form.option name="group" value="Foundation Elements" />
+
             <flux:form.sheet name="display">
                 <flux:field.checkbox name="vertical" />
             </flux:form.sheet>
