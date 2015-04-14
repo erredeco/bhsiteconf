@@ -3,34 +3,8 @@
 <div xmlns="http://www.w3.org/1999/xhtml" xmlns:flux="http://fedext.net/ns/flux/ViewHelpers" xmlns:v="http://fedext.net/ns/vhs/ViewHelpers" xmlns:f="http://typo3.org/ns/fluid/ViewHelpers">
     <f:section name="Configuration">
         <flux:form id="orbit" options="{group:'Foundation Elements', icon:'{f:uri.resource(path: \'Icons/Content/bhsiteconf_carousel.png\')}'}">
-            <flux: field.select name="settings.orbit.animation" items="slide,fade" />
-            <flux:field.checkbox name="settings.orbit.disablebullets" />
-            <flux:field.checkbox name="settings.orbit.disablecircular" />
-            <flux:field.checkbox name="settings.orbit.disabletimer" />
-            <flux:field.checkbox name="settings.orbit.disablepauseonhover" />
-            <flux:field.checkbox name="settings.orbit.resumeonmouseout" />
-            <flux:field.checkbox name="settings.orbit.disablenextonclick" />
-            <flux:field.input name="settings.orbit.timerspeed" eval="int,trim" />
-            <flux:field.input name="settings.orbit.animationspeed" eval="int,trim" />
-            <flux:field.checkbox name="settings.orbit.disablenavigationarrows" />
-            <flux:field.checkbox name="settings.orbit.disableslidenumbers" />
-            <flux:field.checkbox name="settings.orbit.disabletimerprogressbar" />
-            <flux:field.checkbox name="settings.orbit.variableheight" />
-            <flux:field.checkbox name="settings.orbit.disableswipe" />
-            <flux:field.input name="settings.orbit.additionalclass" default="example-orbit-content" />
-            <flux:grid>
-                <f:for each="{elements}" as="element" iteration="iteration">
-                    <f:for each="{element}" key="elementType" as="elementData">
-                        <f:if condition="{0: elementType} == {0: 'content'}">
-                            <flux:grid.row>
-                                <flux:grid.column>
-                                    <flux:form.content name="{elementData.id}" label="Content: {elementData.id}" />
-                                </flux:grid.column>
-                            </flux:grid.row>
-                        </f:if>
-                    </f:for>
-                </f:for>
-            </flux:grid>
+
+ 
             <flux:form.sheet name="elements">
                 <flux:form.section name="elements">
                     <flux:form.object name="text">
@@ -50,6 +24,43 @@
                     </flux:form.object>
                 </flux:form.section>
             </flux:form.sheet>
+            
+            <flux:form.sheet name="display" label="CIAO">
+              <flux: field.select name="settings.orbit.animation" items="slide,fade" />
+              <flux:field.checkbox name="settings.orbit.disablebullets" />
+              <flux:field.checkbox name="settings.orbit.disablecircular" />
+              <flux:field.checkbox name="settings.orbit.disabletimer" />
+              <flux:field.checkbox name="settings.orbit.disablepauseonhover" />
+              <flux:field.checkbox name="settings.orbit.resumeonmouseout" />
+              <flux:field.checkbox name="settings.orbit.disablenextonclick" />
+              <flux:field.input name="settings.orbit.timerspeed" eval="int,trim" />
+              <flux:field.input name="settings.orbit.animationspeed" eval="int,trim" />
+              <flux:field.checkbox name="settings.orbit.disablenavigationarrows" />
+              <flux:field.checkbox name="settings.orbit.disableslidenumbers" />
+              <flux:field.checkbox name="settings.orbit.disabletimerprogressbar" />
+              <flux:field.checkbox name="settings.orbit.variableheight" />
+              <flux:field.checkbox name="settings.orbit.disableswipe" />
+              <flux:field.input name="settings.orbit.additionalclass" default="example-orbit-content" />
+            </flux:form.sheet>            
+            
+            
+            <flux:grid>
+                <f:for each="{elements}" as="element" iteration="iteration">
+                    <f:for each="{element}" key="elementType" as="elementData">
+                        <f:if condition="{0: elementType} == {0: 'content'}">
+                            <flux:grid.row>
+                                <flux:grid.column>
+                                    <flux:form.content name="{elementData.id}" label="Content: {elementData.id}" />
+                                </flux:grid.column>
+                            </flux:grid.row>
+                        </f:if>
+                    </f:for>
+                </f:for>
+            </flux:grid>             
+            
+            
+            
+            
         </flux:form>
     </f:section>
     <f:section name="Preview">
