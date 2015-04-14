@@ -1,7 +1,10 @@
 {namespace flux=FluidTYPO3\Flux\ViewHelpers} {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 <f:layout name="Content" />
 <f:section name="Configuration">
-    <flux:form id="sectioncetwocolsas" options="{group:'FCE', icon:'{f:uri.resource(path: \'Icons/Content/bhsiteconf_2cols_a.png\')}'}">
+    <flux:form id="sectioncetwocolsas">
+        <flux:form.option name="icon" value="{f:uri.resource(path:'Icons/Content/bhsiteconf_2cols_a.png')}" />
+        <flux:form.option name="group" value="FCE" />
+
         <flux:grid>
             <flux:grid.row>
                 <flux:grid.column style="width:75%;border-right: 1px dotted #999;" name="subcolumn-1" label="Subcolumn left" />

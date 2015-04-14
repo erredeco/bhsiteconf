@@ -1,7 +1,10 @@
 {namespace flux=FluidTYPO3\Flux\ViewHelpers} {namespace v=FluidTYPO3\Vhs\ViewHelpers}
 <f:layout name="Content" />
 <f:section name="Configuration">
-    <flux:form id="fluidfluxcontent" label="Fluid/FluxContent di prova" options="{group:'FCE', icon:'{f:uri.resource(path: \'Icons/Page.gif\')}'}">
+    <flux:form id="fluidfluxcontent" label="Fluid/FluxContent di prova">
+        <flux:form.option name="icon" value="{f:uri.resource(path:'Icons/Page.gif')}" />
+        <flux:form.option name="group" value="FCE" />
+
         <flux:field.input name="target" label="'Select link'">
             <flux:wizard.link activeTab="'page'" />
         </flux:field.input>
