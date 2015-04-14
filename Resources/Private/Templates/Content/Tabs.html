@@ -5,10 +5,6 @@
         <flux:form id="tabs">
             <flux:form.option name="icon" value="{f:uri.resource(path:'Icons/Content/bhsiteconf_tabs.png')}" />
             <flux:form.option name="group" value="Foundation Elements" />
-
-            <flux:form.sheet name="display">
-                <flux:field.checkbox name="vertical" />
-            </flux:form.sheet>
             <flux:form.sheet name="tabs">
                 <flux:form.section name="tabs">
                     <flux:form.object name="tab">
@@ -17,7 +13,8 @@
                     </flux:form.object>
                 </flux:form.section>
             </flux:form.sheet>
-            <flux:form.sheet name="other">
+            <flux:form.sheet name="display">
+                <flux:field.checkbox name="vertical" />
                 <flux:field.checkbox name="deeplinking" />
             </flux:form.sheet>
             <flux:grid>

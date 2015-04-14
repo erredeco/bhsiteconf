@@ -87,7 +87,7 @@
 				<source>Tabs element container</source>
 			</trans-unit>
 			<trans-unit id="flux.tabs.sheets.display" xml:space="preserve">
-				<source>Display</source>
+				<source>Display Options</source>
 			</trans-unit>
 			<trans-unit id="flux.tabs.fields.vertical" xml:space="preserve">
 				<source>Display vertical tabs</source>
@@ -106,9 +106,6 @@
 			</trans-unit>
 			<trans-unit id="flux.tabs.objects.tab.active" xml:space="preserve">
 				<source>Active?</source>
-			</trans-unit>
-			<trans-unit id="flux.tabs.sheets.other" xml:space="preserve">
-				<source>Other configuration</source>
 			</trans-unit>
 			<trans-unit id="flux.tabs.fields.deeplinking" xml:space="preserve">
 				<source>(Optional) Activate Deep Linking</source>
