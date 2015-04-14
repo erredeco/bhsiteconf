@@ -170,12 +170,12 @@
 			<trans-unit id="flux.orbit.fields.settings.orbit.additionalclass" xml:space="preserve">
 				<source>Additional class for Orbit slider container</source>
 			</trans-unit>	
-
-
-
 			<trans-unit id="flux.orbit.sheets.elements" xml:space="preserve">
 				<source>Content elements</source>
-			</trans-unit>
+			</trans-unit> 
+			<trans-unit id="flux.orbit.sheets.display" xml:space="preserve">
+				<source>Display Options</source>
+			</trans-unit>      
 			<trans-unit id="flux.orbit.sections.elements" xml:space="preserve">
 				<source>Manage Content elements</source>
 			</trans-unit>
