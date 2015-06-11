@@ -4,8 +4,6 @@
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bhsiteconf/Configuration/TypoScript/Common/setup.home.cleanMarkup.t3s">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bhsiteconf/Configuration/TypoScript/Common/setup.home.page.commonElements.t3s">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bhsiteconf/Configuration/TypoScript/Common/setup.home.page.Menus.t3s">
-
-
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bhsiteconf/Configuration/TypoScript/Common/setup.home.ext.news.t3s">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:bhsiteconf/Configuration/TypoScript/Common/setup.home.ext.powermail.t3s">
 
