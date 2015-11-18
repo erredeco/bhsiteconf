@@ -5,6 +5,8 @@
         <flux:form.option name="icon" value="{f:uri.resource(path:'Icons/Page.gif')}" />
         <flux:form.option name="group" value="FCE" />
 
+
+        <flux:field.inline.fal name="settings.images" multiple="TRUE" maxItems="20" label="TEST"/>  
         <flux:field.input name="target" label="'Select link'">
             <flux:wizard.link activeTab="'page'" />
         </flux:field.input>
@@ -17,12 +19,25 @@
     <!-- uncomment this to use a grid for nested content elements -->
     Button: {target}, {title}
 </f:section>
+
+
+ <f:section name="Item">
+ <p><a href="{image.url}" title="{f:if(condition: image.description, then: '{image.title}: ', else: '{image.title}')}{image.description}" rel="gallery"><f:image treatIdAsReference="TRUE" src="{image.id}" alt="{image.title}" title="{f:if(condition: image.description, then: '{image.title}: ', else: '{image.title}')}{image.description}" width="170c" height="170c" /></a></p>
+ </f:section>
+
 <f:section name="Main">
     <div class="redetoby">{title} {yeah}</div>
     <f:render section="Button" arguments="{_all}" />
     <v:asset.style dependencies="principal" name="redetoby">
         .redetoby{background:red}
     </v:asset.style>
+
+    <f:for each="{v:content.resources.fal(field: 'settings.images')}" as="image">
+     <f:render section="Item" arguments="{_all}" />
+     </f:for>
+
+
+
 </f:section>
 <f:section name="Button">
     <f:if condition="{target -> v:math.round()} > 0">
