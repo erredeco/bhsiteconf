@@ -21,44 +21,42 @@
         </strong>
         <div class="invisible4">
             <ol id="jumpmenu">
-                <li>
-                    <f:link.page addQueryString="1" section="header" tabindex="1" rel="nofollow" title="{f:translate(key:'page.label.header.title')}">
-                        <f:translate key="page.label.header.title" />
-                    </f:link.page>
+                <li>                    
+                    <a href='#header' tabindex="1" rel="nofollow" title="{f:translate(key:'page.label.header.title')}">    <f:translate key="page.label.header.title" />
+                    </a>
                 </li>
                 <li>
-                    <f:link.page addQueryString="1" section="mainmenu" tabindex="1" rel="nofollow" title="{f:translate(key:'page.label.mainmenu.title')}">
-                        <f:translate key="page.label.mainmenu.title" />
-                    </f:link.page>
+                    <a href='#mainmenu' tabindex="1" rel="nofollow" title="{f:translate(key:'page.label.mainmenu.title')}">    <f:translate key="page.label.mainmenu.title" />
+                    </a>
                 </li>
                 <li>
-                    <f:link.page addQueryString="1" section="content" tabindex="1" rel="nofollow" title="{f:translate(key:'page.label.content.title')}">
-                        <f:translate key="page.label.content.title" />
-                    </f:link.page>
+                    <a href='#content' tabindex="1" rel="nofollow" title="{f:translate(key:'page.label.content.title')}">    <f:translate key="page.label.content.title" />
+                    </a>                    
+
                     <f:cObject typoscriptObjectPath="lib.mainSectionIndex" />
                 </li>
                 <v:content.render column="1" as="sideContentElements">
                     <f:if condition="{sideContentElements}">
                         <li>
-                            <f:link.page addQueryString="1" section="extra" tabindex="1" rel="nofollow" title="{f:translate(key:'page.label.extra.title')}">
+                            <a href='#extra' tabindex="1" rel="nofollow" title="{f:translate(key:'page.label.extra.title')}">    
                                 <f:translate key="page.label.extra.title" />
-                            </f:link.page>
+                            </a>
                         </li>
                     </f:if>
                 </v:content.render>
                 <f:if condition="{settings.includenavigation}">
                     <v:condition.page.hasSubpages>
                         <li>
-                            <f:link.page addQueryString="1" section="submenu" tabindex="1" rel="nofollow" title="{f:translate(key:'page.label.submenu.title')}">
+                            <a href='#submenu' tabindex="1" rel="nofollow" title="{f:translate(key:'page.label.submenu.title')}">    
                                 <f:translate key="page.label.submenu.title" />
-                            </f:link.page>
+                            </a>                            
                         </li>
                     </v:condition.page.hasSubpages>
                 </f:if>
                 <li>
-                    <f:link.page addQueryString="1" section="footer" tabindex="1" rel="nofollow" title="{f:translate(key:'page.label.footer.title')}">
+                     <a href='#footer' tabindex="1" rel="nofollow" title="{f:translate(key:'page.label.footer.title')}">
                         <f:translate key="page.label.footer.title" />
-                    </f:link.page>
+                    </a>                   
                 </li>
             </ol>
         </div>
@@ -80,12 +78,6 @@
     <f:section name="LinkToTop">
         <p class="">
             <a href='#jumpmenu'><f:translate key="page.label.linktotop" /></a>
-
-    
-            <!-- 
-      NOTA: potresti aggiungere il parametro argumentsToBeExcludedFromQueryString="{1:'id'}"
-      NOTA: vedi di cambiare e mettere semplicemente <a href="#jumpmenu">...</a>
-     -->
         </p>
     </f:section>
 </div>
