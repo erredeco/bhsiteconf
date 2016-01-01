@@ -6,19 +6,16 @@
         </div>
     </div>
 </f:section>
-<f:section name="MainMenu">
+<f:section name="MainMenuBis">
     <div class="row">
         <nav class="mainmenu small-12 medium-12 large-12 columns">
             <v:page.menu entryLevel="0" levels="1">
                 <ul class="side-nav">
                     <f:for each="{menu}" as="item">
-                        <li class="{f:if(condition:'{item.active}',then:'active')} {f:if(condition:'{item.current}',then:'current')}">
-                            <f:link.page pageUid="{item.uid}" title="{f:if(condition:'{item.nav_title}',then:'{item.nav_title}',else:'{item.title}')}">
-                                <f:if condition="{item.nav_title}">
-                                    <f:then>{item.nav_title}</f:then>
-                                    <f:else>{item.title}</f:else>
-                                </f:if>
-                            </f:link.page>
+                        <li class="{item.class}">
+                            <v:link.typolink configuration="{parameter:'{item.link}', title: '{item.linktext}'}">
+                                {item.linktext}
+                            </v:link.typolink>
                         </li>
                     </f:for>
                 </ul>
@@ -30,6 +27,32 @@
     <v:page.menu levels="2" entryLevel="1">
         <ul class="side-nav">
             <f:for each="{menu}" as="item">
+                <li class="{item.class}">
+                    <v:link.typolink configuration="{parameter:'{item.link}', title: '{item.linktext}'}">
+                        {item.linktext}
+                    </v:link.typolink>
+                    <f:if condition="{item.hasSubPages}">
+                        <v:page.menu.sub pageUid="{item.uid}" />
+
+                        <!--
+                        <v:page.menu pageUid="{item.uid}">
+                            <ul>
+                                <f:for each="{menu}" as="subItem">
+                                    <li class="{subItem.class}">
+                                        <v:link.typolink configuration="{parameter:'{subItem.link}', title: '{subItem.linktext}'}">
+                                            {subItem.linktext}
+                                        </v:link.typolink>
+                                    </li>                                    
+                                </f:for>
+                            </ul>                            
+                        </v:page.menu>-->
+                    </f:if>
+                </li>
+
+
+
+
+
                 <li class="{f:if(condition:'{item.active}',then:'active')} {f:if(condition:'{item.current}',then:'current')}">
                     <f:link.page pageUid="{item.uid}" title="{f:if(condition:'{item.nav_title}',then:'{item.nav_title}',else:'{item.title}')}">
                         <f:if condition="{item.nav_title}">
