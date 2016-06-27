@@ -24,23 +24,20 @@ ol.component-items-ordered { color: #10007B; list-style-type: lower-roman; }
 ol.action-items-ordered { color: #8A0020; list-style-type: lower-greek; }
 
 /* Three inline text colors taken from the color scheme of CSS Styled Content extension.*/
-
 span.important { color: #8A0020; }
 span.name-of-person { color: #10007B; }
-span.detail { color: #186900;}
-
+span.detail { color: #186900; }
 /*example of an addition*/
 span.green{color:#006600;background:#ccffcc;}
 
-
 /* Selectors for the default configuration of the link accessibity feature.*/
 a.external-link {}
-/*
 a.external-link-new-window {}
 a.internal-link {}
 a.internal-link-new-window {}
 a.download {}
-a.mail {} */
+a.mail {}
 
 /* Default selector for indentation.*/
 div.indent { margin-left: 2em; }
+

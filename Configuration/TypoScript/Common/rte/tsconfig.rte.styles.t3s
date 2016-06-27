@@ -10,10 +10,10 @@ RTE.classes{
 }
 
 RTE.default {
-	#custom css copied from /typo3/sysext/rtehtmlarea/res/contentcss/contentcss.css
+	#custom css copied from /typo3/sysext/rtehtmlarea/res/contentcss/default.css
 	# In order to see the styles in the RTE dropdown, they MUST be configured here, also!!
 	#remove them here to hide them in RTE dropdown!	
-	contentCSS = EXT:bhsiteconf/Configuration/Typoscript/common/rte/default.css
+	contentCSS = EXT:bhsiteconf/Configuration/TypoScript/Common/rte/default.css
 }
 
 RTE.default{	
@@ -27,6 +27,6 @@ RTE.default{
 	
 	//example of an addition
 	buttons.textstyle.tags.span.allowedClasses :=addToList(green)
-	proc.allowedClasses :=addtolist(green)
+	proc.allowedClasses :=addToList(green)
 } 
 
